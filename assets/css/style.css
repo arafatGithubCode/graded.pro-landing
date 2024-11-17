@@ -180,7 +180,9 @@ h6 {
 ul {
   margin-bottom: 0px;
 }
-
+a {
+  display: inline-block;
+}
 p {
   font-size: 15px;
   line-height: 30px;
@@ -240,6 +242,7 @@ body {
 }
 
 .cta-button:hover {
+  color: #fff;
   background-color: #ff784e;
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(255, 87, 34, 0.7);
@@ -830,14 +833,14 @@ Banner Style
 
 .main-banner-wrapper {
   position: absolute;
-  top: 150px;
+  top: 200px;
   left: 0;
   right: 0;
   height: 100vh;
 }
 .main-banner .left-content h6 {
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
   color: #fff;
   margin-bottom: 15px;
@@ -848,7 +851,7 @@ Banner Style
   z-index: 2;
   position: relative;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 40px;
   color: #fff;
   margin-bottom: 20px;
 }
@@ -860,9 +863,190 @@ Banner Style
   padding: 10px;
   color: #b2b2b2;
   opacity: 0.8;
-  font-size: 12px;
+  font-size: 14px;
   line-height: normal;
   font-weight: normal;
+}
+
+/* 
+---------------------------------------------
+Video
+--------------------------------------------- 
+*/
+.our-videos {
+  padding-bottom: 100px;
+  background-color: #000307;
+}
+.our-videos .section-heading {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.our-videos .section-heading .line-dec {
+  margin: 0 auto;
+}
+
+.our-videos .videos-left-dec img {
+  width: 220px;
+  height: 471px;
+  left: 0;
+  top: 120px;
+  position: absolute;
+}
+
+.our-videos .videos-right-dec img {
+  width: 730px;
+  height: 523px;
+  right: 0;
+  top: 45px;
+  position: absolute;
+}
+
+.our-videos {
+  position: relative;
+  margin-bottom: -30px;
+  padding-top: 120px;
+  margin-top: 0px;
+}
+
+.our-videos .naccs {
+  position: relative;
+}
+
+.our-videos .naccs .menu div {
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.our-videos .naccs .menu div {
+  transition: all 0.3s;
+}
+
+.our-videos .naccs .menu div.active .thumb .inner-content {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+}
+
+.our-videos .naccs .menu div.active .thumb .inner-content h4 {
+  top: 40%;
+  transform: translateY(-55%);
+  position: relative;
+}
+
+.our-videos .naccs .menu div.active .thumb .inner-content span {
+  display: block;
+  position: relative;
+  top: 55%;
+  transform: translateY(-55%);
+}
+
+.our-videos ul.nacc {
+  position: relative;
+  min-height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.our-videos ul.nacc li {
+  opacity: 0;
+  transform: translateX(-50px);
+  position: absolute;
+  list-style: none;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.our-videos ul.nacc li.active {
+  transition-delay: 0.3s;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.our-videos ul.nacc li {
+  width: 100%;
+}
+
+.our-videos .nacc .thumb {
+  position: relative;
+  border-radius: 23px;
+}
+
+.our-videos .nacc .thumb iframe {
+  border-radius: 23px;
+  height: 675px;
+}
+
+.our-videos .nacc .thumb .overlay-effect {
+  background: rgb(255, 104, 95);
+  background: linear-gradient(
+    105deg,
+    rgba(255, 104, 95, 1) 0%,
+    rgba(255, 144, 104, 1) 100%
+  );
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+  padding: 35px 30px;
+  text-align: center;
+}
+
+.our-videos .nacc .thumb .overlay-effect h4 {
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.our-videos .nacc .thumb .overlay-effect span {
+  font-size: 15px;
+  color: #fff;
+}
+
+.our-videos .menu .thumb {
+  position: relative;
+}
+
+.our-videos .menu .thumb .inner-content {
+  background: rgb(255, 104, 95);
+  background: linear-gradient(
+    105deg,
+    rgba(255, 104, 95, 1) 0%,
+    rgba(255, 144, 104, 1) 100%
+  );
+  border-top-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 20px 30px;
+  transition: all 0.3s;
+}
+
+.our-videos .menu .thumb .inner-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.our-videos .menu .thumb .inner-content span {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+  display: none;
+  transition: all 0.3s;
 }
 
 /* 
@@ -1455,7 +1639,7 @@ feature card
     width: 90% !important;
   }
   .hero {
-    height: 135vh !important;
+    height: 140vh !important;
   }
   .pricing .pricing_card {
     grid-template-columns: repeat(1, 1fr) !important;
