@@ -870,23 +870,27 @@ Banner Style
 
 /* 
 ---------------------------------------------
-Video
+New Addition
 --------------------------------------------- 
 */
-.our-videos {
+.new-addition {
   padding-bottom: 100px;
   background-color: #000307;
+  position: relative;
+  margin-bottom: -30px;
+  padding-top: 120px;
+  margin-top: 0px;
 }
-.our-videos .section-heading {
+.new-addition .section-heading {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.our-videos .section-heading .line-dec {
+.new-addition .section-heading .line-dec {
   margin: 0 auto;
 }
 
-.our-videos .videos-left-dec img {
+.new-addition .addition-left-dec img {
   width: 220px;
   height: 471px;
   left: 0;
@@ -894,7 +898,7 @@ Video
   position: absolute;
 }
 
-.our-videos .videos-right-dec img {
+.new-addition .addition-right-dec img {
   width: 730px;
   height: 523px;
   right: 0;
@@ -902,153 +906,82 @@ Video
   position: absolute;
 }
 
-.our-videos {
-  position: relative;
-  margin-bottom: -30px;
-  padding-top: 120px;
-  margin-top: 0px;
-}
-
-.our-videos .naccs {
+.new-addition .container {
   position: relative;
 }
+.feature-slider .item {
+  --hue-1: 300;
+  --hue-2: 350;
+  border: 3px solid transparent;
+  background: linear-gradient(var(--container-color), var(--container-color))
+      padding-box,
+    linear-gradient(
+        135deg,
+        hsl(var(--hue-1), 85%, 70%) 0%,
+        var(--container-color),
+        var(--container-color),
+        hsl(var(--hue-2), 70%, 55%) 100%
+      )
+      border-box;
+  overflow: hidden;
+  text-align: center;
+  margin: 15px;
+  border-radius: 20px;
+  color: var(--white-color);
+  padding: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+}
+.feature-slider .item:hover {
+  background: linear-gradient(145deg, #121420, #1a1d2e);
+  box-shadow: 0 6px 5px rgba(255, 255, 255, 0.4);
+}
 
-.our-videos .naccs .menu div {
+.feature-slider .item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 30px;
-  cursor: pointer;
-  position: relative;
-  vertical-align: middle;
-  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  line-height: 30px;
+}
+.feature-slider .item p,
+.feature-slider .item span {
+  line-height: normal;
+  color: #b2b2b2;
+  font-size: 12px;
+  font-weight: 500;
 }
 
-.our-videos .naccs .menu div {
-  transition: all 0.3s;
+.feature-slider .item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.our-videos .naccs .menu div.active .thumb .inner-content {
+.feature-slider .item p,
+.feature-slider .item ul {
+  padding-top: 10px;
+  border-top: 0.1px solid gray;
+}
+
+.feature-slider .owl-dots {
   text-align: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 23px;
+  margin-top: 40px;
+}
+.feature-slider .owl-dots .owl-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff695f;
+  border-radius: 50%;
+  opacity: 0.3;
+  margin: 0px 5px;
 }
 
-.our-videos .naccs .menu div.active .thumb .inner-content h4 {
-  top: 40%;
-  transform: translateY(-55%);
-  position: relative;
-}
-
-.our-videos .naccs .menu div.active .thumb .inner-content span {
-  display: block;
-  position: relative;
-  top: 55%;
-  transform: translateY(-55%);
-}
-
-.our-videos ul.nacc {
-  position: relative;
-  min-height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.our-videos ul.nacc li {
-  opacity: 0;
-  transform: translateX(-50px);
-  position: absolute;
-  list-style: none;
-  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.our-videos ul.nacc li.active {
-  transition-delay: 0.3s;
-  position: relative;
-  z-index: 2;
+.feature-slider .owl-dots .active {
   opacity: 1;
-  transform: translateX(0px);
+  width: 10px;
+  height: 10px;
 }
-
-.our-videos ul.nacc li {
-  width: 100%;
-}
-
-.our-videos .nacc .thumb {
-  position: relative;
-  border-radius: 23px;
-}
-
-.our-videos .nacc .thumb iframe {
-  border-radius: 23px;
-  height: 675px;
-}
-
-.our-videos .nacc .thumb .overlay-effect {
-  background: rgb(255, 104, 95);
-  background: linear-gradient(
-    105deg,
-    rgba(255, 104, 95, 1) 0%,
-    rgba(255, 144, 104, 1) 100%
-  );
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-top-left-radius: 23px;
-  border-bottom-right-radius: 23px;
-  padding: 35px 30px;
-  text-align: center;
-}
-
-.our-videos .nacc .thumb .overlay-effect h4 {
-  font-size: 20px;
-  margin-top: 5px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.our-videos .nacc .thumb .overlay-effect span {
-  font-size: 15px;
-  color: #fff;
-}
-
-.our-videos .menu .thumb {
-  position: relative;
-}
-
-.our-videos .menu .thumb .inner-content {
-  background: rgb(255, 104, 95);
-  background: linear-gradient(
-    105deg,
-    rgba(255, 104, 95, 1) 0%,
-    rgba(255, 144, 104, 1) 100%
-  );
-  border-top-left-radius: 23px;
-  border-bottom-right-radius: 23px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 20px 30px;
-  transition: all 0.3s;
-}
-
-.our-videos .menu .thumb .inner-content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  transition: all 0.3s;
-}
-
-.our-videos .menu .thumb .inner-content span {
-  font-size: 15px;
-  color: #fff;
-  font-weight: 400;
-  display: none;
-  transition: all 0.3s;
-}
-
 /* 
 ---------------------------------------------
 About Style

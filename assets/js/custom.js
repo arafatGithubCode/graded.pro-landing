@@ -14,26 +14,6 @@
     }
   });
 
-  $(".loop").owlCarousel({
-    center: true,
-    items: 1,
-    loop: true,
-    autoplay: true,
-    nav: true,
-    margin: 0,
-    responsive: {
-      1200: {
-        items: 5,
-      },
-      992: {
-        items: 3,
-      },
-      760: {
-        items: 2,
-      },
-    },
-  });
-
   // Menu Dropdown Toggle
   if ($(".menu-trigger").length) {
     $(".menu-trigger").on("click", function () {
@@ -41,6 +21,30 @@
       $(".header-area .nav").slideToggle(200);
     });
   }
+
+  // New Addition Slider
+  $(".feature-slider").owlCarousel({
+    items: 4,
+    loop: true,
+    dots: true,
+    nav: false,
+    autoplay: true,
+    margin: 5,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+      1600: {
+        items: 4,
+      },
+    },
+  });
 
   // Menu elevator animation
   $(".scroll-to-section a[href*=\\#]:not([href=\\#])").on("click", function () {
