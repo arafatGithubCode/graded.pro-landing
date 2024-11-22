@@ -6,7 +6,7 @@ Table of contents
 03. global styles
 04. hero (header + main banner)
 05. about
-06. services
+06. examples
 07. features
 08. free trial
 09. pricing
@@ -246,6 +246,11 @@ body {
   background-color: #ff784e;
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(255, 87, 34, 0.7);
+}
+.custom_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 991px) {
   html,
@@ -830,7 +835,56 @@ header
 Banner Style
 --------------------------------------------- 
 */
+.video-container {
+  position: relative;
+  width: 640px;
+  max-width: 100%;
+}
 
+.plyr--video {
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+/* Initial play button overlay */
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.play-button-overlay:hover {
+  opacity: 1;
+  border-style: dotted;
+}
+
+/* Border styling when video is playing */
+.video-container.playing .plyr--video {
+  border: 2px solid #1e90ff; /* Dark blue color */
+}
+
+/* Hide play button overlay on playing state */
+.video-container.playing .play-button-overlay {
+  display: none;
+}
+@media all and (min-width: 500px) and (max-width: 992px) {
+  .video-container {
+    position: relative;
+    width: 440px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
 .main-banner-wrapper {
   position: absolute;
   top: 200px;
@@ -919,7 +973,7 @@ New Addition
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -935,6 +989,75 @@ New Addition
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.new-addition .header-text .top-title .slide-card {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: 1s;
+}
+.new-addition .header-text .top-title .slide-card .cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../images/cardbg.png) no-repeat center center / cover;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  z-index: 4;
+  transform-origin: left;
+  transition: 1s ease-in-out;
+}
+.new-addition .header-text .top-title .slide-card .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+.new-addition .item:hover .cover {
+  transform: rotateY(-180deg) !important;
+}
+
+.new-addition .item:hover .cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/cardbg.png) no-repeat center center / cover;
+  z-index: -1;
+}
+
+.new-addition .item:hover .slide-card {
+  transform: perspective(2000px) translateX(30%);
+}
+.new-addition .header-text .top-title .slide-card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  z-index: 3;
+  background: url(../images/cardbg.png) no-repeat center center / cover;
+}
+.new-addition .header-text .top-title .slide-card .details h3 {
+  font-weight: 500;
+  padding: 10px 0 5px;
+  color: #fff;
+  transform: translateX(-6px);
 }
 .new-addition .item-3 .companion-app-slide {
   width: 100%;
@@ -1066,56 +1189,56 @@ New Addition
 
 /* 
 ---------------------------------------------
-Services Style
+Examples Style
 --------------------------------------------- 
 */
 
-.services {
+.examples {
   padding-top: 130px;
   padding-bottom: 100px;
   position: relative;
   background-color: #17233a;
 }
 
-.services .section-heading {
+.examples .section-heading {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.services .section-heading .line-dec {
+.examples .section-heading .line-dec {
   margin: 0 auto;
 }
 
-.services .naccs {
+.examples .naccs {
   position: relative;
   z-index: 1;
 }
 
-.services .icon {
+.examples .icon {
   display: block;
   text-align: center;
   margin: 0 auto;
 }
 
-.services .naccs .menu div h4 {
+.examples .naccs .menu div h4 {
   color: #fff;
   font-size: 15px;
   font-weight: 400;
   width: 100%;
 }
 
-.services .icon svg {
+.examples .icon svg {
   margin-bottom: 10px;
   max-width: 60px;
   min-width: 60px;
 }
 
-.services .naccs .menu {
+.examples .naccs .menu {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.services .naccs .menu div {
+.examples .naccs .menu div {
   color: #2a2a2a;
   margin: 0px;
   width: 20%;
@@ -1129,7 +1252,7 @@ Services Style
   transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.services .naccs .menu div .thumb {
+.examples .naccs .menu div .thumb {
   display: inline-block;
   width: 100%;
   padding: 20px 0px;
@@ -1137,17 +1260,17 @@ Services Style
   color: #fff;
 }
 
-.services .naccs .menu div.active {
+.examples .naccs .menu div.active {
   box-shadow: 0 6px 10px rgba(255, 255, 255, 0.08),
     0 12px 20px rgba(255, 255, 255, 0.06), 0 16px 32px rgba(255, 255, 255, 0.05);
 }
-.services .naccs .menu div:hover {
+.examples .naccs .menu div:hover {
   box-shadow: 0 6px 10px rgba(255, 255, 255, 0.08),
     0 12px 20px rgba(255, 255, 255, 0.06), 0 16px 32px rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
 }
 
-.services ul.nacc {
+.examples ul.nacc {
   height: 100% !important;
   position: relative;
   min-height: 100%;
@@ -1157,7 +1280,7 @@ Services Style
   transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.services ul.nacc li {
+.examples ul.nacc li {
   opacity: 0;
   transform: translateX(-50px);
   position: absolute;
@@ -1166,7 +1289,7 @@ Services Style
   margin-bottom: 50px;
 }
 
-.services ul.nacc li.active {
+.examples ul.nacc li.active {
   transition-delay: 0.3s;
   position: relative;
   z-index: 2;
@@ -1179,17 +1302,17 @@ Services Style
   padding: 80px 120px 50px 120px;
 }
 
-.services ul.nacc li:hover {
+.examples ul.nacc li:hover {
   box-shadow: 0 6px 10px rgba(255, 255, 255, 0.08),
     0 12px 20px rgba(255, 255, 255, 0.06), 0 16px 32px rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
 }
 
-.services ul.nacc li {
+.examples ul.nacc li {
   width: 100%;
 }
 
-.services ul.nacc li .right-image img {
+.examples ul.nacc li .right-image img {
   max-width: 420px;
   float: right;
   transform: scale(1);
@@ -1197,12 +1320,12 @@ Services Style
   transition: transform 1s, filter 2s;
 }
 
-.services ul.nacc li .right-image img:hover {
+.examples ul.nacc li .right-image img:hover {
   transform: scale(1.05);
   filter: drop-shadow(4px 4px 30px #666);
 }
 
-.services .nacc .thumb h4 {
+.examples .nacc .thumb h4 {
   color: #2a2a2a;
   font-size: 20px;
   font-weight: 700;
@@ -1210,28 +1333,28 @@ Services Style
   margin-bottom: 25px;
 }
 
-.services .nacc .thumb .main-white-button {
+.examples .nacc .thumb .main-white-button {
   text-align: right;
   margin-top: 40px;
 }
 
-.services .nacc .thumb .main-white-button a {
+.examples .nacc .thumb .main-white-button a {
   background-color: #8d99af;
   color: #fff;
 }
 
-.services .nacc .thumb .main-white-button a i {
+.examples .nacc .thumb .main-white-button a i {
   background-color: #fff;
   color: #8d99af;
 }
 
-.services .left-text h4 {
+.examples .left-text h4 {
   font-size: 20px;
   font-weight: 700;
   color: #fff !important;
 }
 
-.services .left-text p {
+.examples .left-text p {
   margin-bottom: 30px;
   color: #b2b2b2;
   text-align: justify;
@@ -1848,19 +1971,19 @@ responsive
   .service-item .right-content {
     display: inline-block;
   }
-  .services .naccs .menu div .thumb {
+  .examples .naccs .menu div .thumb {
     padding: 5px;
   }
-  .services .icon img {
+  .examples .icon img {
     margin: 0px;
   }
-  .services ul.nacc li.active {
+  .examples ul.nacc li.active {
     padding: 45px;
   }
-  .services .naccs .menu div {
+  .examples .naccs .menu div {
     color: #fff;
   }
-  .services ul.nacc li .right-image img {
+  .examples ul.nacc li .right-image img {
     float: none;
   }
   .computerSFont,
@@ -1874,7 +1997,7 @@ responsive
     text-align: center;
   }
 
-  .our-services .section-heading {
+  .our-examples .section-heading {
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -1970,7 +2093,7 @@ responsive
     margin-bottom: 45px;
   }
 
-  .services .naccs .menu div {
+  .examples .naccs .menu div {
     font-size: 15px;
     font-weight: 500;
   }

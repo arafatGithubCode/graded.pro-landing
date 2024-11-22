@@ -50,62 +50,10 @@
 
     <!-- Plyr JavaScript -->
     <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js"></script>
-
-    <style>
-      .video-container {
-        position: relative;
-        width: 640px;
-        max-width: 100%;
-      }
-
-      .plyr--video {
-        border-radius: 8px;
-        transition: border 0.3s;
-      }
-
-      /* Initial play button overlay */
-      .play-button-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 30px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 5px 10px;
-        border-radius: 50%;
-        border: 4px solid #fff;
-        color: white;
-        cursor: pointer;
-        opacity: 0.8;
-        transition: opacity 0.3s;
-      }
-
-      .play-button-overlay:hover {
-        opacity: 1;
-        border-style: dotted;
-      }
-
-      /* Border styling when video is playing */
-      .video-container.playing .plyr--video {
-        border: 2px solid #1e90ff; /* Dark blue color */
-      }
-
-      /* Hide play button overlay on playing state */
-      .video-container.playing .play-button-overlay {
-        display: none;
-      }
-      @media all and (min-width: 500px) and (max-width: 992px) {
-        .video-container {
-          position: relative;
-          width: 440px;
-          max-width: 100%;
-          margin: 0 auto;
-        }
-      }
-    </style>
   </head>
 
   <body>
+    <!-- hero start-->
     <section class="hero">
       <div class="hero_overlay"></div>
       <!-- ***** Header Area Start ***** -->
@@ -235,7 +183,9 @@
         </div>
       </div>
     </section>
+    <!-- hero end-->
 
+    <!-- new addition start-->
     <div id="new-addition" class="new-addition section">
       <div class="addition-left-dec">
         <img src="assets/images/videos-left-dec.png" alt="" />
@@ -271,10 +221,19 @@
                 <div class="header-text">
                   <div class="top-title">
                     <span class="category">AI Detection</span>
-                    <div>
-                      <iframe
-                        src="https://lottie.host/embed/c0cbc858-9252-4231-a56a-2eb84ed75182/MyDMEuHsaY.json"
-                      ></iframe>
+                    <div class="slide-card">
+                      <div class="cover">
+                        <img
+                          src="assets/images/detect-card-removebg-preview.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="details">
+                        <h3>Check Plagiarism</h3>
+                        <iframe
+                          src="https://lottie.host/embed/c0cbc858-9252-4231-a56a-2eb84ed75182/MyDMEuHsaY.json"
+                        ></iframe>
+                      </div>
                     </div>
                   </div>
                   <h2>Uphold Academic Integrity with AI Detection</h2>
@@ -302,10 +261,53 @@
                 <div class="header-text">
                   <div class="top-title">
                     <span class="category">AI Models</span>
-                    <div>
-                      <iframe
-                        src="https://lottie.host/embed/cfa5a9df-7c8d-4323-a6b1-c251609c98be/q7mUUOC98S.json"
-                      ></iframe>
+                    <div class="slide-card">
+                      <div class="cover">
+                        <svg
+                          width="170px"
+                          height="170px"
+                          viewBox="0 -1.5 21 21"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                          <title>swipe_right [#1378]</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs></defs>
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                          >
+                            <g
+                              id="Dribbble-Light-Preview"
+                              transform="translate(-139.000000, -800.000000)"
+                              fill="#fff"
+                            >
+                              <g
+                                id="icons"
+                                transform="translate(56.000000, 160.000000)"
+                              >
+                                <path
+                                  d="M87.2,645.00025 C87.2,644.44825 86.7296,644.00025 86.15,644.00025 L84.05,644.00025 C83.4704,644.00025 83,644.44825 83,645.00025 C83,645.55225 83.4704,646.00025 84.05,646.00025 L86.15,646.00025 C86.7296,646.00025 87.2,645.55225 87.2,645.00025 M103.38575,643.83125 L103.01195,643.47425 L99.67295,640.29325 C99.2624,639.90225 98.5967,639.90225 98.1872,640.29325 C97.77665,640.68425 97.77665,641.31725 98.1872,641.70725 L99.95225,643.26825 C100.283,643.58325 100.04885,644.00025 99.58055,644.00025 L94.18985,644.00025 C93.6092,644.00025 93.13985,644.44825 93.13985,645.00025 C93.13985,645.55225 93.6092,646.00025 94.18985,646.00025 L99.58265,646.00025 C100.05095,646.00025 100.2851,646.66025 99.95435,646.97525 L98.1872,648.71725 C97.7777,649.10825 97.7777,649.77125 98.1872,650.16225 C98.59775,650.55225 99.2624,650.56725 99.6719,650.17725 L103.38575,646.64825 C104.20475,645.86725 104.20475,644.61225 103.38575,643.83125 M97.3451,653.04225 L96.9965,656.59925 C96.80015,657.53425 95.9381,658.00025 94.93745,658.00025 L89.8607,658.00025 C89.51525,658.00025 89.1908,658.04525 88.9955,657.77425 L86.7275,653.84725 C86.4419,653.45425 86.49125,652.92325 86.8451,652.58625 C87.3008,652.15225 88.05575,652.21425 88.42535,652.71625 L89.3,653.90925 L89.3,645.41425 C89.3,644.86225 89.7746,644.41425 90.3542,644.41425 C91.10075,644.41425 91.4084,645.06025 91.4084,645.41425 L91.4168,650.45825 L95.94965,650.85625 C96.9545,651.17425 97.553,652.05325 97.3451,653.04225"
+                                  id="swipe_right-[#1378]"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="details">
+                        <h3>
+                          Cost Effective <br />
+                          Model
+                        </h3>
+                        <iframe
+                          src="https://lottie.host/embed/cfa5a9df-7c8d-4323-a6b1-c251609c98be/q7mUUOC98S.json"
+                        ></iframe>
+                      </div>
                     </div>
                   </div>
                   <h2>Choose the Right AI Model for Your Needs</h2>
@@ -386,10 +388,16 @@
                 <div class="header-text">
                   <div class="top-title">
                     <span class="category">Enhanced Feedback</span>
-                    <div>
-                      <iframe
-                        src="https://lottie.host/embed/a692230b-661d-4a83-a806-c0336188846d/u5nGdg3nMO.json"
-                      ></iframe>
+                    <div class="slide-card">
+                      <div class="cover">
+                        <img src="assets/images/voice-card.png" alt="" />
+                      </div>
+                      <div class="details">
+                        <h3>Audio Comments</h3>
+                        <iframe
+                          src="https://lottie.host/embed/a692230b-661d-4a83-a806-c0336188846d/u5nGdg3nMO.json"
+                        ></iframe>
+                      </div>
                     </div>
                   </div>
                   <h2>Provide Personalized Feedback with Voice Notes</h2>
@@ -415,8 +423,10 @@
         </div>
       </div>
     </div>
+    <!-- new addition end-->
 
-    <div id="services" class="services section">
+    <!-- example start-->
+    <div id="examples" class="examples section">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -1089,7 +1099,9 @@ L9.746,15.254z"
         </div>
       </div>
     </div>
+    <!-- example end -->
 
+    <!-- features start-->
     <div id="features" class="features">
       <div class="container">
         <div
@@ -1516,7 +1528,9 @@ L9.746,15.254z"
         </div>
       </div>
     </div>
+    <!-- features end-->
 
+    <!-- free trial start-->
     <div id="free-trial" class="free-trial section">
       <div class="container">
         <div class="background">
@@ -1532,7 +1546,9 @@ L9.746,15.254z"
         </div>
       </div>
     </div>
+    <!-- free trial end-->
 
+    <!-- pricing start-->
     <div id="pricing" class="pricing">
       <div class="container">
         <div
@@ -1561,342 +1577,351 @@ L9.746,15.254z"
             ></div>
           </div>
         </div>
+
         <div class="pricing_card">
-          <div class="pricing_card_wrapper">
-            <div
-              class="pricing_card_content"
-              class="wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.8s"
-            >
-              <p class="category">Individual Teachers</p>
-              <p class="desc">Best for a teacher getting started.</p>
-              <p class="plan_price">$19<span>/month</span></p>
-              <div class="price_divider_line"></div>
-              <div style="padding: 30px 0">
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>900 Credits</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>No Expiration Date</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Access to basic features</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Email support</p>
-                </div>
-
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Up to 10 users</p>
-                </div>
-              </div>
-              <button
-                class="cta-button"
-                style="width: 100%; text-align: center"
+          <div class="custom_center">
+            <div class="pricing_card_wrapper">
+              <div
+                class="pricing_card_content"
+                class="wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.8s"
               >
-                sign up
-              </button>
+                <p class="category">Individual Teachers</p>
+                <p class="desc">Best for a teacher getting started.</p>
+                <p class="plan_price">$19<span>/month</span></p>
+                <div class="price_divider_line"></div>
+                <div style="padding: 30px 0">
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>900 Credits</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>No Expiration Date</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Access to basic features</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Email support</p>
+                  </div>
+
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Up to 10 users</p>
+                  </div>
+                </div>
+                <button
+                  class="cta-button"
+                  style="width: 100%; text-align: center"
+                >
+                  sign up
+                </button>
+              </div>
             </div>
           </div>
-          <div class="pricing_card_wrapper">
-            <div
-              class="pricing_card_content"
-              class="wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.8s"
-            >
-              <p class="category">Individual Teachers</p>
-              <p class="desc">Best for a teacher getting started.</p>
-              <p class="plan_price">$25<span>/month</span></p>
-              <div class="price_divider_line"></div>
-              <div style="padding: 30px 0">
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>2400 Credits</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>No Expiration Date</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Access to basic features</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Email support</p>
-                </div>
 
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Up to 10 users</p>
-                </div>
-              </div>
-              <button
-                class="cta-button"
-                style="width: 100%; text-align: center"
+          <div class="custom_center">
+            <div class="pricing_card_wrapper">
+              <div
+                class="pricing_card_content"
+                class="wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.8s"
               >
-                sign up
-              </button>
+                <p class="category">Individual Teachers</p>
+                <p class="desc">Best for a teacher getting started.</p>
+                <p class="plan_price">$25<span>/month</span></p>
+                <div class="price_divider_line"></div>
+                <div style="padding: 30px 0">
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>2400 Credits</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>No Expiration Date</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Access to basic features</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Email support</p>
+                  </div>
+
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Up to 10 users</p>
+                  </div>
+                </div>
+                <button
+                  class="cta-button"
+                  style="width: 100%; text-align: center"
+                >
+                  sign up
+                </button>
+              </div>
             </div>
           </div>
-          <div class="pricing_card_wrapper">
-            <div
-              class="pricing_card_content"
-              class="wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.8s"
-            >
-              <p class="category">Whole School</p>
-              <p class="desc">Best for a teacher getting started.</p>
-              <p class="plan_price whole_sale">Contact Us</p>
-              <div class="price_divider_line"></div>
-              <div style="padding: 30px 0">
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Whole School Solution Yearly contracts</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>No Expiration Date</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Access to basic features</p>
-                </div>
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Email support</p>
-                </div>
 
-                <div class="price_pack_list">
-                  <svg
-                    width="16px"
-                    height="16px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12.6111L8.92308 17.5L20 6.5"
-                      stroke="#fff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p>Up to 10 users</p>
-                </div>
-              </div>
-              <span class="popular-tag">Most Popular</span>
-              <button
-                class="cta-button"
-                style="width: 100%; text-align: center"
+          <div class="custom_center">
+            <div class="pricing_card_wrapper">
+              <div
+                class="pricing_card_content"
+                class="wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.8s"
               >
-                contact us
-              </button>
+                <p class="category">Whole School</p>
+                <p class="desc">Best for a teacher getting started.</p>
+                <p class="plan_price whole_sale">Contact Us</p>
+                <div class="price_divider_line"></div>
+                <div style="padding: 30px 0">
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Whole School Solution Yearly contracts</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>No Expiration Date</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Access to basic features</p>
+                  </div>
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Email support</p>
+                  </div>
+
+                  <div class="price_pack_list">
+                    <svg
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12.6111L8.92308 17.5L20 6.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Up to 10 users</p>
+                  </div>
+                </div>
+                <span class="popular-tag">Most Popular</span>
+                <button
+                  class="cta-button"
+                  style="width: 100%; text-align: center"
+                >
+                  contact us
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1913,7 +1938,9 @@ L9.746,15.254z"
         </p>
       </div>
     </div>
+    <!-- pricing end-->
 
+    <!-- testimonial start-->
     <div id="testimonial" class="testimonial section">
       <div class="container">
         <div class="row">
@@ -2054,11 +2081,13 @@ L9.746,15.254z"
         </div>
       </div>
     </div>
+    <!-- testimonial end-->
 
+    <!-- footer start-->
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3 custom_center">
             <div class="about-footer footer-item">
               <div class="logo">
                 <a href="#">
@@ -2082,7 +2111,8 @@ L9.746,15.254z"
               </ul>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+
+          <div class="col-sm-6 col-lg-3 custom_center">
             <div class="services-footer footer-item">
               <h4>Our Services</h4>
               <ul>
@@ -2093,7 +2123,8 @@ L9.746,15.254z"
               </ul>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+
+          <div class="col-sm-6 col-lg-3 custom_center">
             <div class="community-footer footer-item">
               <h4>Explore</h4>
               <ul>
@@ -2104,7 +2135,8 @@ L9.746,15.254z"
               </ul>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+
+          <div class="col-sm-6 col-lg-3 custom_center">
             <div class="subscribe-newsletters footer-item">
               <h4>Subscribe to Our Newsletter</h4>
               <p>Stay updated with the latest insights and resources.</p>
@@ -2122,6 +2154,7 @@ L9.746,15.254z"
               </form>
             </div>
           </div>
+
           <div class="col-lg-12">
             <div class="copyright">
               <p>
@@ -2136,6 +2169,7 @@ L9.746,15.254z"
         </div>
       </div>
     </footer>
+    <!-- footer end-->
 
     <!-- Scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
