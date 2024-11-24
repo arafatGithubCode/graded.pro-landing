@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link />
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../assets/images/logo.png"
+      alt="AI Marking"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/images/logo.png"
+      alt="AI Grading"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content="AI grading tool for teachers and educators. Cutting-edge AI grading with handwriting recognition. Try it free today."
+    />
+    <meta name="author" content="Graded Pro" />
+    <link rel="canonical" href="index.html" />
+    <title>AI Grading for Teachers - Graded Pro</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!--     Fonts and icons     -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="referrer" content="origin" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/animated.css" />
+    <link rel="stylesheet" href="../assets/css/owl.css" />
+
+    <style>
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .header-area-rest-page {
+        background-color: #17233a !important;
+      }
+      .faq-body {
+        position: relative;
+        top: 80px;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        background-color: #000307;
+      }
+      .faq-banner {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        background: url("../assets/images/faq-banner.jpg") no-repeat 20% 20% /
+          cover;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .text-overlay {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      .text-overlay h2 {
+        z-index: 1;
+        font-weight: 600;
+        font-size: 20px;
+        color: #fff;
+      }
+
+      /* 
+        ---------------------------------------------
+        question list Style
+        --------------------------------------------- 
+     */
+
+      .question-list {
+        position: relative;
+        padding: 0px;
+        padding-bottom: 130px;
+        margin-top: 50px;
+      }
+
+      .accordion {
+        background-color: #17233a;
+        border-radius: 40px;
+        padding: 20px;
+      }
+
+      .accordion-item {
+        background-color: #fff;
+        border-radius: 40px !important;
+        margin-bottom: 30px;
+        border: none;
+      }
+
+      .accordion-item .accordion-button {
+        outline: none;
+        box-shadow: none;
+        border-radius: 40px !important;
+      }
+
+      .accordion-button:not(.collapsed) {
+        color: #ff5722;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+
+      h2.accordion-header button {
+        padding: 15px 25px;
+        font-family: "Poppins";
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .accordion-button::after {
+        font-size: 18px;
+        font-weight: 500;
+        background-image: none;
+        content: "+";
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        background-color: #ff5722;
+        color: #fff;
+      }
+
+      .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        line-height: 32px;
+        content: "-";
+      }
+
+      .accordion-body {
+        padding: 0px 25px 30px 25px;
+        font-size: 14px;
+        line-height: 28px;
+        color: #4a4a4a;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-area-rest-page header-sticky wow slideInDown"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="../index.html" class="logo">
+                <img
+                  style="width: 80px"
+                  src="../assets/images/logo.png"
+                  alt=""
+                />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li>
+                  <a href="./stdSubmit.html">Student Area</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="../index.html#free-trial">Free Trial</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="../index.html#pricing">Pricing</a>
+                </li>
+                <li>
+                  <a href="./faq.html">FAQ</a>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li>
+                  <a href="./auth.html">Login</a>
+                </li>
+                <li>
+                  <a class="cta-button" href="#" style="color: #fff"
+                    >Try For Free!</a
+                  >
+                </li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <div class="faq-body">
+      <div class="faq-banner">
+        <div class="overlay"></div>
+        <div class="text-overlay">
+          <h2 class="wow fadeInDown">Frequently Asked Questions</h2>
+          <div class="wow fadeInUp">
+            <svg
+              style="z-index: 1"
+              width="100px"
+              height="100px"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.5 5.5C5.5 4.11929 6.61929 3 8 3C9.38071 3 10.5 4.11929 10.5 5.5C10.5 6.88071 9.38071 8 8 8H7V11H8C11.0376 11 13.5 8.53757 13.5 5.5C13.5 2.46243 11.0376 0 8 0C4.96243 0 2.5 2.46243 2.5 5.5H5.5Z"
+                fill="#fff"
+              />
+              <path d="M10 13H7V16H10V13Z" fill="#fff" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="question-list">
+        <div class="container">
+          <div class="accordion" id="accordionExample"></div>
+        </div>
+      </div>
+    </div>
+    <!-- footer start-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 custom_center">
+            <div class="about-footer footer-item">
+              <div class="logo">
+                <a href="../index.html">
+                  <img src="../assets/images/logo.png" />
+                </a>
+              </div>
+              <a href="mailto:info@graded.pro">info@graded.pro</a>
+              <ul class="social-links">
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 custom_center">
+            <div class="services-footer footer-item">
+              <h4>Our Services</h4>
+              <ul>
+                <li><a href="#">Educational Consulting</a></li>
+                <li><a href="#">Online Tutoring</a></li>
+                <li><a href="#">Curriculum Development</a></li>
+                <li><a href="#">Career Counseling</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 custom_center">
+            <div class="community-footer footer-item">
+              <h4>Explore</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 custom_center">
+            <div class="subscribe-newsletters footer-item">
+              <h4>Subscribe to Our Newsletter</h4>
+              <p>Stay updated with the latest insights and resources.</p>
+              <form action="#" method="get">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required=""
+                />
+                <button type="submit" id="form-submit" class="main-button">
+                  <i class="fa fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="copyright">
+              <p>
+                © 2024 Graded Pro. All Rights Reserved.<br />
+                Designed by
+                <a href="https://www.freelancer.com/u/arafatWebDev"
+                  >Arafat Hossain</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end-->
+
+    <!-- Scripts -->
+
+    <script>
+      // Fetch JSON data and dynamically populate the accordion
+      fetch("../assets/js/data/accordion.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const accordion = document.getElementById("accordionExample");
+          data.forEach((item, index) => {
+            const accordionItem = `
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading${index}">
+                  <button
+                    class="accordion-button ${index !== 0 ? "collapsed" : ""}"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse${index}"
+                    aria-expanded="${index === 0}"
+                    aria-controls="collapse${index}">
+                    ${item.title}
+                  </button>
+                </h2>
+                <div
+                  id="collapse${index}"
+                  class="accordion-collapse collapse ${
+                    index === 0 ? "show" : ""
+                  }"
+                  aria-labelledby="heading${index}"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    ${item.content}
+                  </div>
+                </div>
+              </div>
+            `;
+            accordion.innerHTML += accordionItem;
+          });
+        })
+        .catch((error) =>
+          console.error("Error loading accordion data:", error)
+        );
+    </script>
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/owl-carousel.js"></script>
+    <script src="../assets/js/animation.js"></script>
+    <script src="../assets/js/imagesloaded.js"></script>
+
+    <script src="../assets/js/custom.js"></script>
+  </body>
+</html>

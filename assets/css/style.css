@@ -355,16 +355,6 @@ header
 --------------------------------------------- 
 */
 
-.background-header {
-  background-color: var(--dark-blue-bg) !important;
-  height: 80px !important;
-  position: fixed !important;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.03);
-}
-
 .background-header .logo,
 .background-header .main-nav .nav li a {
   color: var(--white-color);

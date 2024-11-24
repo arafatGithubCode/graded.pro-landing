@@ -3,14 +3,19 @@
 
   // Header Type = Fixed
   $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    var box = $(".main-banner").height();
-    var header = $("header").height();
+    const scroll = $(window).scrollTop();
+    const header = $("header");
+    const endPath = window.location.pathname;
 
-    if (scroll >= box - header) {
-      $("header").addClass("background-header");
+    const isIndexPage = endPath === "/index.html";
+    const threshold = isIndexPage
+      ? $(".main-banner").height() - header.height()
+      : $(".header-area-rest-page").height() + 100;
+
+    if (scroll >= threshold) {
+      header.addClass("background-header");
     } else {
-      $("header").removeClass("background-header");
+      header.removeClass("background-header");
     }
   });
 
