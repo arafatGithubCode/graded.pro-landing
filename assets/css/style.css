@@ -1963,6 +1963,13 @@ footer .copyright p {
 footer .copyright p a {
   color: #ff695f;
 }
+footer .footer-app img {
+  width: 200px;
+  transition: all 0.5s ease-in-out;
+}
+footer .footer-app img:hover {
+  transform: scale(1.03);
+}
 
 /* 
 ---------------------------------------------
@@ -2068,6 +2075,11 @@ responsive
   }
   .new-addition .item-3 span.category {
     margin-left: 0px;
+  }
+  .footer-app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 }
 
