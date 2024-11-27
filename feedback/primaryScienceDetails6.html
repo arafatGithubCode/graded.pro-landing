@@ -38,50 +38,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- External Scripts -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("pre code").forEach((el) => {
-          hljs.highlightElement(el);
-          const title = el.className.split("-")[1].toUpperCase();
-          el.insertAdjacentHTML(
-            "beforeend",
-            `<span class="info">${title}</span>`
-          );
-          hljs.lineNumbersBlock(el);
-        });
-      });
-
-      function popImage(src, title) {
-        if (src.includes(".txt")) {
-          fetch(src)
-            .then((response) => response.text())
-            .then((response) =>
-              Swal.fire({
-                width: 600,
-                html: `<div class="container text-left code"><pre><code>${response}</code></pre></div>`,
-                showCloseButton: true,
-                showConfirmButton: false,
-              })
-            );
-        } else {
-          Swal.fire({
-            imageUrl: src,
-            width: document.documentElement.clientWidth,
-            imageAlt: title,
-            showCloseButton: true,
-            showConfirmButton: false,
-          });
-        }
-      }
-    </script>
-
     <!-- Styles -->
     <style>
-      BODY {
-        background-image: url("../assets/images/bg/bgsub2.jpg");
-        background-repeat: repeat;
-        background-size: contain;
+      body {
+        background: url("../assets/images/bg/pastel.jpg"),
+          repeat center center / cover;
       }
       .breadcrumb-link {
         background-color: #17233a;
@@ -150,25 +111,61 @@
         text-align: justify;
         color: #000;
       }
-      .myanswer {
-        background: #e8dbc7;
-        padding: 4px;
-        border-radius: 3px;
-        font-weight: bold;
-        margin-bottom: 5px;
-        display: block;
-        border: solid 1px #a29686;
-        color: #000;
+      .divider {
+        width: 97%;
+        height: 10px;
+        background-color: transparent;
+        box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3),
+          -1px -1px 5px rgba(255, 255, 255, 0.2);
+        margin: 5px auto;
+        border-radius: 2px;
       }
-      .ansheader {
+      .myanswer {
+        border-radius: 5px;
+        border: 1px solid #828282;
+      }
+      .myanswer p:first-child b {
+        background-color: #c6ae8a;
+        color: #000;
+        padding: 3px 5px;
         display: block;
-        margin: -4px;
-        padding: 3px;
-        margin-bottom: 2px;
-        border-bottom: 2px solid #857878;
-        background: #c6ae8a;
+        font-weight: 500;
+        font-size: 16px;
+        border-bottom: 3px solid #828282;
+      }
+      .solution {
+        width: 97%;
+        border-radius: 5px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        margin: 20px auto;
+      }
+      .solution > p {
+        display: block;
+        background: #229a12;
+        padding: 3px 5px;
+        color: #fff;
+        border-bottom: solid 2px #353535;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .solution > .solution-body {
+        padding: 3px 5px;
+        background-color: #a8f79d;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+      }
+      .solution > .solution-body p {
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: normal;
       }
       .list_wrapper {
+        width: 97%;
+        margin: 0 auto;
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         row-gap: 30px;
@@ -178,7 +175,6 @@
         align-items: start;
         justify-content: center;
         column-gap: 10px;
-        padding-left: 50px;
       }
       .list_content {
         border-radius: 5px;
@@ -187,63 +183,72 @@
         box-shadow: 1px 5px 5px rgba(255, 255, 255, 0.2),
           -1px -1px 5px rgba(255, 255, 255, 0.3);
       }
-      .list_content p:nth-child(1) {
-        color: #b2b2b2;
-        font-weight: 400;
-        font-size: 16px;
-      }
-      .list_content p:nth-child(2) {
-        background-color: #229a12;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: 2px solid #343a40;
-        font-weight: 500;
-        font-size: 16px;
-        text-transform: uppercase;
-        margin-top: 5px;
-      }
-      .list_content p:nth-child(3) {
-        background-color: #a8f79d;
-        color: #000;
-        padding: 5px;
-        border-radius: 5px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom: 2px solid #7a818a;
-        font-weight: 500;
-        font-size: 16px;
-      }
       .list_content > div {
         display: flex;
         justify-content: space-between;
-        column-gap: 10px;
         background-color: #ffef00;
         padding: 5px;
         border-radius: 5px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        border: 1px solid #7a818a;
+      }
+      .list_content > ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        background-color: #ffef00;
+        padding: 50px 20px;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         border-bottom: 3px solid #7a818a;
-        margin-top: 8px;
+      }
+      .list_content > ul > li {
+        display: flex;
+        align-items: center;
+        column-gap: 2px;
+      }
+      .list_content > ul > li > span {
+        color: #000;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 5px;
+      }
+      .list_content > ul > li > p {
+        display: block;
+        flex: 1;
+        background-color: #fff;
+        color: #000;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
       }
       .list_content > div > span {
         background-color: #05ffff;
-        padding: 15px 10px;
+        padding: 5px 15px;
         border-radius: 5px;
         font-weight: 600;
         font-size: 18px;
         color: #000;
-        transform: translateY(-14px);
+        transform: translateY(-20px);
         max-height: fit-content;
       }
       .list_content > div > i {
+        padding-top: 30px;
         flex: 1;
         color: #000;
         font-weight: 500;
         font-size: 16px;
+      }
+      .card-bottom {
+        padding-top: 50px;
+        line-height: normal;
+        font-size: 16px;
+        font-weight: 400;
+        color: #000;
+        text-align: justify;
+        font-style: italic;
       }
       score {
         display: none;
@@ -261,158 +266,152 @@
               <a href="../index.html#examples">Examples</a>
             </li>
             <li class="breadcrumb-item active" aria-current="Art Details">
-              Art Details
+              Primary Science Details
             </li>
           </ol>
         </nav>
       </div>
       <div class="card">
         <div class="card-header">
-          <b>Skull</b>
+          <b>Solar Energy</b>
         </div>
         <div class="card-footer">
           <b>INSTRUCTIONS:</b>
           <p>
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
+            Draw and label a diagram showing how solar energy can power your
+            house.
           </p>
         </div>
         <div class="card-footer">
           <b>STUDENT ANSWER</b>
-          <div class="text-center">
-            <a
-              class="text-white"
-              onclick="popImage('../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png', 'Answer')"
-            >
-              <img
-                class="timage"
-                src="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png"
-              />
-              <br />skull-drawing-－anatomy-1.png
-            </a>
+          <div class="row">
+            <div class="m-2 text-center">
+              <a
+                class="text-white"
+                style="font-weight: bold; font-size: 0.9rem"
+                target="_blank"
+                href="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_bef3ad20e11f48c3b03fdd4221be9519.pdf"
+              >
+                <img
+                  class="timage"
+                  src="../media/CLASS_4a761e013b4b42b194559028c462247b/th_ATT_bef3ad20e11f48c3b03fdd4221be9519.jpg"
+                />
+                <br />
+                Sid S - Solar Energy.pdf
+              </a>
+            </div>
           </div>
         </div>
         <div class="card-footer">
           <b>FEEDBACK FOR Sid S</b>
           <hr />
           <p class="lead">
-            SCORE <strong style="color: #f5f5f5">94 / 100</strong>
+            SCORE <strong style="color: #f5f5f5">80 / 100</strong>
           </p>
         </div>
         <div class="card-body content">
           <p class="comment">
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
+            QUESTION: Draw and label a diagram showing how solar energy can
+            power your house.
           </p>
           <div class="myanswer">
-            <p class="myanswer"><b>YOUR ANSWER</b></p>
+            <p><b>YOUR ANSWER</b></p>
           </div>
-          <p style="padding: 10px 0 20px">
-            <span
-              style="
-                border-bottom: 1px solid #b2b2b2;
-                font-size: 16px;
-                font-weight: 400;
-              "
-              >Art Assessment Review</span
-            >
-          </p>
+          <div class="solution">
+            <p>SOLUTION</p>
+            <div class="solution-body">
+              <p>
+                Correct diagram would include a clear representation of solar
+                panels capturing sunlight, an inverter converting DC electricity
+                to AC, the house using the electricity, possibly a battery
+                system for storing energy, and labels and descriptions for each
+                part.
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
 
-          <ul class="list_wrapper">
-            <li class="list_field">
+          <div class="list_field">
+            <div>
+              <svg
+                fill="#fff"
+                width="10px"
+                height="10px"
+                viewBox="0 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>alt-circle</title>
+                <path
+                  d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
+                ></path>
+              </svg>
+            </div>
+            <div class="list_content">
               <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
+                <i>
+                  &nbsp; &nbsp;&nbsp;Sid, your diagram is enjoyable to look at,
+                  and you have included several key components of a solar energy
+                  system. Here is a step by step review of your work:
+                </i>
+                <span>80/100</span>
               </div>
-              <div class="list_content">
-                <p>Accuracy of Proportions</p>
-                <p>SOLUTION</p>
-                <p>The skull dimensions and proportions are highly accurate.</p>
-                <div>
-                  <i>
-                    Sid, you've done an excellent job of capturing the
-                    proportions of the skull. The dimensions are very realistic
-                    and show a high level of accuracy.
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Attention to Detail</p>
-                <p>SOLUTION</p>
-                <p>Exceptional attention to fine details and textures.</p>
-                <div>
-                  <i>
-                    The detail in your drawing is remarkable, showing a deep
-                    understanding of the skull's texture and nuances. Great work
-                    in this area, Sid!
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Shading Technique</p>
-                <p>SOLUTION</p>
-                <p>
-                  Shading is skillfully applied to create a dynamic range of
-                  tones.
+              <ul>
+                <li>
+                  <span>1. &nbsp;</span>
+                  <p>
+                    The sun is accurately depicted as the source of energy
+                    (solar energy). <strong>+10 points</strong>
+                  </p>
+                </li>
+                <li>
+                  <span>2. &nbsp;</span>
+                  <p>
+                    The solar panels are shown converting sunlight into
+                    electricity, which is correct. However, adding an inverter
+                    would make it more accurate. <strong>+45 points</strong>
+                  </p>
+                </li>
+                <li>
+                  <span>3. &nbsp;</span>
+                  <p>
+                    You've labeled the solar panels and correctly mentioned
+                    their function in converting light energy into electricity.
+                    <strong>+15 points</strong>
+                  </p>
+                </li>
+                <li>
+                  <span>4. &nbsp;</span>
+                  <p>
+                    The solar panels on the house are an excellent touch;
+                    however, it would be scientifically accurate to elaborate
+                    that they transfer electrical energy into the home's
+                    electrical system. <strong>+5 points</strong>
+                  </p>
+                </li>
+                <li>
+                  <span>5. &nbsp;</span>
+                  <p>
+                    While your labels and descriptions are clear, you've missed
+                    including an inverter, which is a crucial part of the
+                    system. <strong>+5 points</strong>
+                  </p>
+                </li>
+                <p class="card-bottom">
+                  For improvement, ensure all necessary components are included
+                  and accurately labeled. Also, you could include a battery
+                  storage system to illustrate how solar power can be stored for
+                  use when the sun isn't shining. The neatness and creativity of
+                  your drawing are good, and with a little more attention to
+                  scientific detail, your diagram could be perfect. Keep
+                  exploring and learning about solar energy, and remember,
+                  accuracy is key in science diagrams!
                 </p>
-                <div>
-                  <i>
-                    Your shading technique is masterful, with an excellent range
-                    of tones that give the drawing depth and dimension. The
-                    technique adds to the lifelike appearance. Keep it up!
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-          </ul>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider my-3"></div>
         </div>
         <div class="card-footer">
           <b>TEACHER: Richard N</b>

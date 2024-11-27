@@ -36,9 +36,16 @@
     />
     <link rel="stylesheet" href="../assets/css/fontawesome.css" />
 
+    <!-- External packages -->
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- External Scripts -->
+    <!-- Prism.js CSS (Dark Theme) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("pre code").forEach((el) => {
@@ -150,86 +157,82 @@
         text-align: justify;
         color: #000;
       }
-      .myanswer {
-        background: #e8dbc7;
-        padding: 4px;
-        border-radius: 3px;
-        font-weight: bold;
-        margin-bottom: 5px;
-        display: block;
-        border: solid 1px #a29686;
-        color: #000;
+
+      .my-answer {
+        border: 1px solid #828282;
+        border-radius: 5px;
       }
       .ansheader {
-        display: block;
-        margin: -4px;
-        padding: 3px;
-        margin-bottom: 2px;
-        border-bottom: 2px solid #857878;
-        background: #c6ae8a;
-      }
-      .list_wrapper {
-        display: flex;
-        flex-direction: column;
-        row-gap: 30px;
-      }
-      .list_field {
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        column-gap: 10px;
-        padding-left: 50px;
-      }
-      .list_content {
-        border-radius: 5px;
-        padding: 30px 5px;
-        padding-top: 0;
-        box-shadow: 1px 5px 5px rgba(255, 255, 255, 0.2),
-          -1px -1px 5px rgba(255, 255, 255, 0.3);
-      }
-      .list_content p:nth-child(1) {
-        color: #b2b2b2;
-        font-weight: 400;
-        font-size: 16px;
-      }
-      .list_content p:nth-child(2) {
-        background-color: #229a12;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: 2px solid #343a40;
-        font-weight: 500;
-        font-size: 16px;
-        text-transform: uppercase;
-        margin-top: 5px;
-      }
-      .list_content p:nth-child(3) {
-        background-color: #a8f79d;
+        background-color: #c6ae8a;
+        padding: 3px 5px;
         color: #000;
-        padding: 5px;
-        border-radius: 5px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom: 2px solid #7a818a;
+        font-size: 18px;
         font-weight: 500;
-        font-size: 16px;
+        border-bottom: solid 3px #828282;
       }
-      .list_content > div {
+      .code-container {
+        background-color: #0f172a; /* Dark blue container */
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 20px;
+        position: relative;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .code-tag {
+        position: absolute;
+        top: -12px;
+        right: 16px;
+        background-color: #ffef00;
+        color: #000;
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      pre {
+        margin: 0;
+        overflow-x: auto;
+      }
+      .solution {
+        margin-top: 20px;
+        border-radius: 5px;
+        border: 1px solid #828282;
+      }
+      .solution .header {
+        background-color: #229a12;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 3px 5px;
+        color: #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .solution p {
+        background-color: #a8f79d;
+        padding: 20px 5px 3px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: normal;
+        color: #000;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .solution-comment {
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
-        column-gap: 10px;
-        background-color: #ffef00;
-        padding: 5px;
-        border-radius: 5px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border: 1px solid #7a818a;
-        border-bottom: 3px solid #7a818a;
-        margin-top: 8px;
       }
-      .list_content > div > span {
+      .solution-comment p {
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: normal;
+        padding-right: 10px;
+      }
+      .solution-comment span {
         background-color: #05ffff;
         padding: 15px 10px;
         border-radius: 5px;
@@ -238,12 +241,6 @@
         color: #000;
         transform: translateY(-14px);
         max-height: fit-content;
-      }
-      .list_content > div > i {
-        flex: 1;
-        color: #000;
-        font-weight: 500;
-        font-size: 16px;
       }
       score {
         display: none;
@@ -261,161 +258,138 @@
               <a href="../index.html#examples">Examples</a>
             </li>
             <li class="breadcrumb-item active" aria-current="Art Details">
-              Art Details
+              Computer Science Details
             </li>
           </ol>
         </nav>
       </div>
       <div class="card">
         <div class="card-header">
-          <b>Skull</b>
+          <b>Sorting Algorithm</b>
         </div>
         <div class="card-footer">
           <b>INSTRUCTIONS:</b>
           <p>
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
+            I have an array of integer values : 8,3,55,30,1,76,23,90,40,7 <br />
+
+            Please write a function that accepts an array of integers as input
+            and return the sorted array ASCENDING as output. <br />
+
+            You can write your code using JAVASCRIPT or PYTHON <br />
           </p>
         </div>
         <div class="card-footer">
           <b>STUDENT ANSWER</b>
-          <div class="text-center">
-            <a
-              class="text-white"
-              onclick="popImage('../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png', 'Answer')"
-            >
-              <img
-                class="timage"
-                src="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png"
-              />
-              <br />skull-drawing-－anatomy-1.png
-            </a>
+          <div class="row">
+            <div class="m-2 text-center">
+              <a
+                class="text-white"
+                onclick="popImage('../media/CLASS_a1b17f402dc14e679fc2e19ec48cd9f4/ATT_8f164ab6d9894939af9f57f6faaa3662.png', 'Answer')"
+              >
+                <img
+                  class="timage"
+                  src="../media/CLASS_a1b17f402dc14e679fc2e19ec48cd9f4/ATT_8f164ab6d9894939af9f57f6faaa3662.png"
+                />
+                <br />sort-a.png
+              </a>
+            </div>
           </div>
         </div>
         <div class="card-footer">
-          <b>FEEDBACK FOR Sid S</b>
+          <b>FEEDBACK FOR Savire E</b>
           <hr />
           <p class="lead">
-            SCORE <strong style="color: #f5f5f5">94 / 100</strong>
+            SCORE <strong style="color: #f5f5f5">90 / 100</strong>
           </p>
         </div>
         <div class="card-body content">
           <p class="comment">
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
+            Write a function that accepts an array of integers as input and
+            returns the sorted array in ascending order using either JavaScript
+            or Python.
           </p>
-          <div class="myanswer">
-            <p class="myanswer"><b>YOUR ANSWER</b></p>
+          <div class="my-answer">
+            <div class="ansheader">YOUR ANSWER</div>
+            <div class="code-container">
+              <span class="code-tag">JavaScript</span>
+              <pre><code class="language-javascript">
+          function bubbleSort(array) {
+            var done = false;
+            while (!done) {
+              done = true;
+              for (var i = 1; i < array.length; i += 1) {
+                if (array[i - 1] > array[i]) {
+                  done = false;
+                  var tmp = array[i - 1];
+                  array[i - 1] = array[i];
+                  array[i] = tmp;
+                }
+              }
+            }
+            return array;
+          }
+              </code></pre>
+            </div>
           </div>
-          <p style="padding: 10px 0 20px">
-            <span
-              style="
-                border-bottom: 1px solid #b2b2b2;
-                font-size: 16px;
-                font-weight: 400;
-              "
-              >Art Assessment Review</span
-            >
-          </p>
 
-          <ul class="list_wrapper">
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Accuracy of Proportions</p>
-                <p>SOLUTION</p>
-                <p>The skull dimensions and proportions are highly accurate.</p>
-                <div>
-                  <i>
-                    Sid, you've done an excellent job of capturing the
-                    proportions of the skull. The dimensions are very realistic
-                    and show a high level of accuracy.
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Attention to Detail</p>
-                <p>SOLUTION</p>
-                <p>Exceptional attention to fine details and textures.</p>
-                <div>
-                  <i>
-                    The detail in your drawing is remarkable, showing a deep
-                    understanding of the skull's texture and nuances. Great work
-                    in this area, Sid!
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Shading Technique</p>
-                <p>SOLUTION</p>
-                <p>
-                  Shading is skillfully applied to create a dynamic range of
-                  tones.
-                </p>
-                <div>
-                  <i>
-                    Your shading technique is masterful, with an excellent range
-                    of tones that give the drawing depth and dimension. The
-                    technique adds to the lifelike appearance. Keep it up!
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <div class="solution">
+            <div class="header">SOLUTION</div>
+            <p>1, 3, 7, 8, 23, 30, 40, 55, 76, 90</p>
+          </div>
+
+          <div class="comment solution-comment">
+            <p>
+              The student provided a bubble sort function that achieves the
+              correct sorting output without syntax errors. However, bubble sort
+              has a time complexity of O(n²), which is less efficient compared
+              to algorithms like quicksort or mergesort. Points were adjusted
+              accordingly.
+            </p>
+            <span class="point">90</span>
+          </div>
+
+          <div class="steps">
+            <p style="color: #f5f5f5; font-weight: 500; font-size: 16px">
+              Step by Step Solution:
+            </p>
+            <ul class="list-group">
+              <li class="list-group-item">
+                1. Start with a function declaration bubbleSort(array).
+              </li>
+              <li class="list-group-item">
+                2. Initialize a boolean done to false to control when the
+                sorting is complete.
+              </li>
+              <li class="list-group-item">
+                3. Begin a while loop that continues until done is true. This is
+                used to repeat the sorting process until no swaps are needed.
+              </li>
+              <li class="list-group-item">
+                4. In the loop, assume you're done sorting by setting done to
+                true.
+              </li>
+              <li class="list-group-item">
+                5. Use a for loop to iterate through the array starting from the
+                index 1.
+              </li>
+              <li class="list-group-item">
+                6. If the current element is less than the previous element
+                (array[i - 1] > array[i]), they are swapped, and done is set to
+                false to indicate that sorting isn't finished.
+              </li>
+              <li class="list-group-item">
+                7. After all elements are checked and no swaps are needed, the
+                array is sorted, and the while loop ends.
+              </li>
+              <li class="list-group-item">
+                8. Finally, return the sorted array.
+              </li>
+            </ul>
+          </div>
         </div>
+
         <div class="card-footer">
-          <b>TEACHER: Richard N</b>
+          <b>TEACHER: David S</b>
         </div>
       </div>
     </div>
@@ -511,5 +485,9 @@
     <script src="../assets/js/imagesloaded.js"></script>
 
     <script src="../assets/js/custom.js"></script>
+
+    <!-- Prism.js JS for code snippet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
   </body>
 </html>

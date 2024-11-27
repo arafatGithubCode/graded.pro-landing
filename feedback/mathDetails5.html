@@ -38,6 +38,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- Load MathJax CDN -->
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+
     <!-- External Scripts -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -58,7 +65,7 @@
             .then((response) => response.text())
             .then((response) =>
               Swal.fire({
-                width: 600,
+                width: 800,
                 html: `<div class="container text-left code"><pre><code>${response}</code></pre></div>`,
                 showCloseButton: true,
                 showConfirmButton: false,
@@ -150,14 +157,21 @@
         text-align: justify;
         color: #000;
       }
-      .myanswer {
+      .divider {
+        height: 10px;
+        background-color: transparent;
+        box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5),
+          -1px -1px 5px rgba(255, 255, 255, 0.4);
+        margin: 5px auto;
+        border-radius: 2px;
+      }
+      .answer {
         background: #e8dbc7;
-        padding: 4px;
-        border-radius: 3px;
+        border-radius: 5px;
         font-weight: bold;
         margin-bottom: 5px;
         display: block;
-        border: solid 1px #a29686;
+        border: solid 1px #828282;
         color: #000;
       }
       .ansheader {
@@ -168,17 +182,29 @@
         border-bottom: 2px solid #857878;
         background: #c6ae8a;
       }
-      .list_wrapper {
+      .answer .youranswer {
+        background-color: #c6ae8a;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 3px 5px;
+        border-bottom: solid 3px #828282;
+      }
+      .answer .equation {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: #000;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 3px 5px;
+      }
+      .question-wrapper {
         display: flex;
         flex-direction: column;
-        row-gap: 30px;
-      }
-      .list_field {
-        display: flex;
-        align-items: start;
         justify-content: center;
-        column-gap: 10px;
-        padding-left: 50px;
+        row-gap: 20px;
       }
       .list_content {
         border-radius: 5px;
@@ -187,12 +213,7 @@
         box-shadow: 1px 5px 5px rgba(255, 255, 255, 0.2),
           -1px -1px 5px rgba(255, 255, 255, 0.3);
       }
-      .list_content p:nth-child(1) {
-        color: #b2b2b2;
-        font-weight: 400;
-        font-size: 16px;
-      }
-      .list_content p:nth-child(2) {
+      .list_content p:first-child {
         background-color: #229a12;
         color: #fff;
         padding: 5px;
@@ -205,7 +226,7 @@
         text-transform: uppercase;
         margin-top: 5px;
       }
-      .list_content p:nth-child(3) {
+      .list_content p:nth-child(2) {
         background-color: #a8f79d;
         color: #000;
         padding: 5px;
@@ -261,34 +282,49 @@
               <a href="../index.html#examples">Examples</a>
             </li>
             <li class="breadcrumb-item active" aria-current="Art Details">
-              Art Details
+              Mathematics Details
             </li>
           </ol>
         </nav>
       </div>
       <div class="card">
         <div class="card-header">
-          <b>Skull</b>
+          <b>Task 002</b>
         </div>
         <div class="card-footer">
           <b>INSTRUCTIONS:</b>
-          <p>
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
-          </p>
+          <br />
+          <div class="row">
+            <div class="my-2 text-center">
+              <a
+                class="text-white"
+                style="font-weight: bold; font-size: 0.9rem"
+                onclick="popImage('../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_3901613a0ad84f8a83fcb6ccefb5b936.png','Question')"
+              >
+                <img
+                  class="timage"
+                  src="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_3901613a0ad84f8a83fcb6ccefb5b936.png"
+                />
+                <br />
+                question.png
+              </a>
+            </div>
+          </div>
         </div>
         <div class="card-footer">
           <b>STUDENT ANSWER</b>
           <div class="text-center">
             <a
               class="text-white"
-              onclick="popImage('../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png', 'Answer')"
+              style="font-weight: bold; font-size: 0.9rem"
+              onclick="popImage('../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_41ac6f8588d44b529aa0fc269b3092ed.png','Answer')"
             >
               <img
                 class="timage"
-                src="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_8799c50c46e542fa998d008987192c09.png"
+                src="../media/CLASS_4a761e013b4b42b194559028c462247b/ATT_41ac6f8588d44b529aa0fc269b3092ed.png"
               />
-              <br />skull-drawing-－anatomy-1.png
+              <br />
+              answer.png
             </a>
           </div>
         </div>
@@ -296,119 +332,135 @@
           <b>FEEDBACK FOR Sid S</b>
           <hr />
           <p class="lead">
-            SCORE <strong style="color: #f5f5f5">94 / 100</strong>
+            SCORE <strong style="color: #f5f5f5">100 / 100</strong>
           </p>
         </div>
         <div class="card-body content">
-          <p class="comment">
-            Draw a lifelike skull with emphasis on shading to develop and
-            demonstrate your skills in observational drawing.
-          </p>
-          <div class="myanswer">
-            <p class="myanswer"><b>YOUR ANSWER</b></p>
-          </div>
-          <p style="padding: 10px 0 20px">
-            <span
-              style="
-                border-bottom: 1px solid #b2b2b2;
-                font-size: 16px;
-                font-weight: 400;
-              "
-              >Art Assessment Review</span
-            >
-          </p>
+          <ul class="question-wrapper">
+            <li>
+              <p class="comment">
+                Question (a): Show that \(k = \frac{1}{2}\).
+              </p>
+              <div class="answer">
+                <p class="youranswer"><b>YOUR ANSWER</b></p>
+                <p class="equation">
+                  \(\int_{1}^{3} (kx - k) dx = 1\) <br />\(k \left[
+                  \frac{x^2}{2} - x \right]_{1}^{3} = 1\) <br />\(k \left[
+                  (\frac{9}{2} - 3) - (\frac{1}{2} - 1) \right] = 1\) <br />\(k
+                  (4 - 0.5) = 1\) <br />\(2k = 1\) <br />\(k = \frac{1}{2}\)
+                </p>
+              </div>
+              <div class="divider"></div>
+              <div class="list_content">
+                <p>SOLUTION</p>
+                <p>\(k = \frac{1}{2}\)</p>
+                <div>
+                  <i>
+                    Sid, you followed the correct steps to integrate the
+                    function over its range and set the integrated value equal
+                    to 1, as the total area under a probability density function
+                    must equal 1. Your calculation to find \(k = \frac{1}{2}\)
+                    is correct, well done!
+                  </i>
+                  <span>25</span>
+                </div>
+              </div>
+            </li>
 
-          <ul class="list_wrapper">
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
+            <li>
+              <p class="comment">Question (b): Find \(E(X)\).</p>
+              <div class="answer">
+                <p class="youranswer"><b>YOUR ANSWER</b></p>
+                <p class="equation">
+                  \(E(X) = \int_{1}^{3} x (kx - k) dx\) <br />\(= \int_{1}^{3} x
+                  (\frac{x}{2} - \frac{1}{2}) dx\) <br />\(= \frac{1}{2} \left[
+                  \frac{x^3}{3} - \frac{x^2}{2} \right]_{1}^{3}\) <br />\(=
+                  \frac{1}{2} \left[ (\frac{27}{3} - \frac{9}{2}) - (\frac{1}{3}
+                  - \frac{1}{2}) \right]\) <br />\(= \frac{1}{2} (9 -
+                  4.\overline{5})\) <br />\(= \frac{1}{2} \cdot 4.5\) <br />\(=
+                  2.25\)
+                </p>
               </div>
+              <div class="divider"></div>
               <div class="list_content">
-                <p>Accuracy of Proportions</p>
                 <p>SOLUTION</p>
-                <p>The skull dimensions and proportions are highly accurate.</p>
+                <p>\(E(X) = 2.25\)</p>
                 <div>
                   <i>
-                    Sid, you've done an excellent job of capturing the
-                    proportions of the skull. The dimensions are very realistic
-                    and show a high level of accuracy.
+                    Nicely done, Sid! Your calculation of the expected value
+                    \(E(X)\) correctly applied the definition, with integration
+                    performed properly and arithmetic done correctly.
                   </i>
-                  <span>19</span>
+                  <span>25</span>
                 </div>
               </div>
             </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
+
+            <li>
+              <p class="comment">
+                Question (c): Work out the cumulative distribution function
+                \(F(x)\).
+              </p>
+              <div class="answer">
+                <p class="youranswer"><b>YOUR ANSWER</b></p>
+                <p class="equation">
+                  \(F(x) = \int_{1}^{x} (\frac{t}{2} - \frac{1}{2}) dt\)
+                  <br />\(= \left[ \frac{t^2}{4} - \frac{t}{2} \right]_{1}^{x}\)
+                  <br />\(= \left[ \frac{x^2}{4} - \frac{x}{2} \right] - \left[
+                  \frac{1}{4} - \frac{1}{2} \right]\) <br />\(F(x) =
+                  \frac{x^2}{4} - \frac{x}{2} + \frac{1}{4} \;\; \text{ for } 1
+                  \leq x \leq 3\)
+                </p>
               </div>
+              <div class="divider"></div>
               <div class="list_content">
-                <p>Attention to Detail</p>
-                <p>SOLUTION</p>
-                <p>Exceptional attention to fine details and textures.</p>
-                <div>
-                  <i>
-                    The detail in your drawing is remarkable, showing a deep
-                    understanding of the skull's texture and nuances. Great work
-                    in this area, Sid!
-                  </i>
-                  <span>19</span>
-                </div>
-              </div>
-            </li>
-            <li class="list_field">
-              <div>
-                <svg
-                  fill="#fff"
-                  width="10px"
-                  height="10px"
-                  viewBox="0 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>alt-circle</title>
-                  <path
-                    d="M0 16q0-3.232 1.28-6.208t3.392-5.12 5.12-3.392 6.208-1.28q3.264 0 6.24 1.28t5.088 3.392 3.392 5.12 1.28 6.208q0 3.264-1.28 6.208t-3.392 5.12-5.12 3.424-6.208 1.248-6.208-1.248-5.12-3.424-3.392-5.12-1.28-6.208zM8 16q0 3.328 2.336 5.664t5.664 2.336 5.664-2.336 2.336-5.664-2.336-5.632-5.664-2.368-5.664 2.368-2.336 5.632z"
-                  ></path>
-                </svg>
-              </div>
-              <div class="list_content">
-                <p>Shading Technique</p>
                 <p>SOLUTION</p>
                 <p>
-                  Shading is skillfully applied to create a dynamic range of
-                  tones.
+                  \(F(x) = \frac{x^2}{4} - \frac{x}{2} + \frac{1}{4}, \; 1 \leq
+                  x \leq 3\)
                 </p>
                 <div>
                   <i>
-                    Your shading technique is masterful, with an excellent range
-                    of tones that give the drawing depth and dimension. The
-                    technique adds to the lifelike appearance. Keep it up!
+                    Great job, Sid! You correctly determined the cumulative
+                    distribution function \(F(x)\) by integrating the
+                    probability density function within the appropriate limits
+                    and simplifying the expression.
                   </i>
-                  <span>19</span>
+                  <span>25</span>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <p class="comment">
+                Question (d): Show that the median value lies between 2.4 and
+                2.5.
+              </p>
+              <div class="answer">
+                <p class="youranswer"><b>YOUR ANSWER</b></p>
+                <p class="equation">
+                  \( F(2.4) = \frac{2.4^2}{4} - \frac{2.4}{2} + \frac{1}{4} \)
+                  <br />\( = 1.44 - 0.95 \) <br />\( = 0.49 \) <br /><br />\(
+                  F(2.5) = \frac{2.5^2}{4} - \frac{2.5}{2} + \frac{1}{4} \)
+                  <br />\( = 1.5625 - 1 \) <br />\(= 0.5625\)
+                </p>
+              </div>
+              <div class="divider"></div>
+              <div class="list_content">
+                <p>SOLUTION</p>
+                <p>
+                  \(F(2.4) &lt; 0.5 &lt; F(2.5)\), confirming the median lies
+                  between 2.4 and 2.5.
+                </p>
+                <div>
+                  <i>
+                    Excellent reasoning, Sid! Your calculations for \(F(2.4)\)
+                    and \(F(2.5)\) are correct, and you effortlessly showed that
+                    the median must lie between these two values since
+                    \(F(2.4)\) is less than 0.5 and \(F(2.5)\) is more than
+                    0.5.&nbsp;
+                  </i>
+                  <span>25</span>
                 </div>
               </div>
             </li>
