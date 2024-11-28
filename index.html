@@ -154,7 +154,7 @@
                       data-wow-duration="1s"
                       data-wow-delay="0.5s"
                     >
-                      <div class="video-container">
+                      <div class="video-container" id="videoContainer">
                         <video
                           id="player"
                           class="plyr"
@@ -165,12 +165,12 @@
                             src="assets/images/graded2.mp4"
                             type="video/mp4"
                           />
-                          <!-- Provide fallback content for non-supporting browsers -->
                           Your browser does not support HTML5 video.
                         </video>
-                        <!-- Initial Play Button Overlay -->
+                        <!-- Play/Pause Button Overlay -->
                         <div class="play-button-overlay" id="playButtonOverlay">
                           &#9658;
+                          <!-- Play Icon -->
                         </div>
                       </div>
                     </div>
@@ -2202,52 +2202,49 @@ L9.746,15.254z"
     <script src="assets/js/custom.js"></script>
 
     <script>
-      // video
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Plyr
-        const player = new Plyr("#player", {
-          controls: [
-            "play",
-            "progress",
-            "current-time",
-            "mute",
-            "volume",
-            "fullscreen",
-          ],
-          volume: 0.8,
-        });
-
-        // Elements
-        const videoContainer = document.querySelector(".video-container");
-        const playButtonOverlay = document.getElementById("playButtonOverlay");
-
-        // Initial play button overlay click event
-        playButtonOverlay.addEventListener("click", () => {
-          player.play();
-        });
-
-        // Show play button overlay on hover
-        videoContainer.addEventListener("mouseover", () => {
-          if (player.paused) {
-            playButtonOverlay.style.display = "block";
-          }
-        });
-
-        videoContainer.addEventListener("mouseleave", () => {
-          playButtonOverlay.style.display = "none";
-        });
-
-        // Add class to video container when playing
-        player.on("play", () => {
-          videoContainer.classList.add("playing");
-        });
-
-        // Remove class from video container when paused
-        player.on("pause", () => {
-          videoContainer.classList.remove("playing");
-          playButtonOverlay.style.display = "block"; // Show overlay when paused
-        });
+      // Initialize Plyr
+      const player = new Plyr("#player", {
+        controls: [
+          "play",
+          "progress",
+          "current-time",
+          "mute",
+          "volume",
+          "fullscreen",
+        ],
       });
+
+      // Get references to elements
+      const videoContainer = document.getElementById("videoContainer");
+      const playButtonOverlay = document.getElementById("playButtonOverlay");
+
+      // Function to toggle play/pause
+      const togglePlayPause = () => {
+        if (player.playing) {
+          player.pause();
+        } else {
+          player.play();
+        }
+      };
+
+      // Update button state based on video events
+      player.on("play", () => {
+        playButtonOverlay.innerHTML = "&#10074;&#10074;"; // Pause Icon
+        playButtonOverlay.style.display = "block"; // Always visible
+      });
+
+      player.on("pause", () => {
+        playButtonOverlay.innerHTML = "&#9658;"; // Play Icon
+        playButtonOverlay.style.display = "block"; // Always visible
+      });
+
+      // Handle click on overlay button
+      playButtonOverlay.addEventListener("click", togglePlayPause);
+
+      // Optional: Hide the native Plyr play button
+      document.querySelector(
+        ".plyr__control.plyr__control--overlaid"
+      ).style.display = "none";
     </script>
   </body>
 </html>

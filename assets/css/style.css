@@ -306,11 +306,6 @@ body {
   transition: all 0.5s;
 }
 
-/* .border-first-button a:hover {
-  background-color: #f33816 !important;
-  border: 1px solid #f33816 !important;
-} */
-
 /* 
 ---------------------------------------------
 hero (header + main banner)
@@ -320,7 +315,6 @@ hero (header + main banner)
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
   background-color: var(--dark-blue-bg);
   background: url("../images/education.jpg") no-repeat center center / cover;
 }
@@ -343,6 +337,11 @@ hero (header + main banner)
 .hero-app a {
   flex: 1;
   transition: 1s;
+}
+.hero-app a img {
+  min-width: 150px;
+  max-width: 200px;
+  object-fit: fill;
 }
 .hero-app a:hover {
   transform: scale(1.03);
@@ -695,7 +694,7 @@ Banner Style
   transition: border 0.3s;
 }
 
-/* Initial play button overlay */
+/* Play/Pause Button Overlay */
 .play-button-overlay {
   position: absolute;
   top: 50%;
@@ -705,11 +704,12 @@ Banner Style
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px 10px;
   border-radius: 50%;
-  border: 4px solid var(--white-color);
-  color: var(--white-color);
+  border: 4px solid #ffffff;
+  color: #ffffff;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s;
+  z-index: 10; /* Ensure it stays above the video */
 }
 
 .play-button-overlay:hover {
@@ -717,22 +717,9 @@ Banner Style
   border-style: dotted;
 }
 
-/* Border styling when video is playing */
-.video-container.playing .plyr--video {
-  border: 2px solid #1e90ff; /* Dark blue color */
-}
-
-/* Hide play button overlay on playing state */
-.video-container.playing .play-button-overlay {
-  display: none;
-}
-
 .main-banner-wrapper {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  right: 0;
-  height: 100vh;
+  position: relative;
+  padding-top: 180px;
 }
 .main-banner .left-content h6 {
   text-transform: capitalize;
@@ -743,7 +730,7 @@ Banner Style
   text-transform: uppercase;
 }
 
-.main-banner .left-content h2 {
+.main-banner .left-content h1 {
   z-index: 2;
   position: relative;
   font-weight: 700;
@@ -1800,9 +1787,6 @@ responsive
 
 /* Media Queries */
 @media (max-width: 1200px) {
-  .hero {
-    height: 110vh;
-  }
   .header-area .main-nav .nav li {
     padding-left: 12px;
     padding-right: 12px;
@@ -1830,9 +1814,6 @@ responsive
   body {
     overflow-x: hidden;
   }
-  .hero {
-    height: 140vh;
-  }
   .mobile-top-fix {
     margin-top: 30px;
     margin-bottom: 0px;
@@ -1844,7 +1825,7 @@ responsive
     margin-bottom: 60px;
   }
   .main-banner .left-content {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .header-area .main-nav .nav li:last-child,
   .background-header .main-nav .nav li:last-child {
@@ -1903,9 +1884,6 @@ responsive
 }
 
 @media (max-width: 767px) {
-  .hero {
-    height: 140vh;
-  }
   .background-header .main-nav .nav {
     margin-top: 80px !important;
   }
@@ -1964,16 +1942,12 @@ responsive
 }
 
 @media all and (max-width: 576px) {
-  .hero {
-    height: 140vh;
-  }
   .card__article {
     width: 90% !important;
   }
 }
 @media all and (max-width: 416px) {
   .hero-app {
-    height: 100vh;
     width: 300px;
   }
 }
