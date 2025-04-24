@@ -54,63 +54,58 @@
     <!-- WORK_SUBMISSION_CSS -->
     <style>
       .work-submission {
+        padding: 120px 0px;
+        text-align: center;
         position: relative;
-        overflow: hidden;
+        z-index: 2;
+        margin-top: 0;
+        background-color: #000307;
       }
+
       .work-submission .section-heading {
         margin-bottom: 60px;
       }
 
-      .work-submission .section-heading b.h6-section {
+      .work-submission .section-heading .h6-section {
         font-size: 16px;
-        color: #f97255;
+        color: #ff5722;
       }
       .work-submission .section-heading h4 {
         font-size: 35px;
         color: #fff;
         margin-bottom: 25px;
       }
-
+      .work-submission .section-heading h2 em,
       .work-submission .section-heading .line-dec {
         margin: 0 auto;
-        background-color: #f97255;
+        background-color: #ff5722;
       }
-      .work-submission .bg-video {
-        position: relative;
-        width: 100%;
-        height: 870px;
-        box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
-      }
-      .work-submission .bg-video video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .work-submission .bg-video .overlay {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .work-submission .work-submission-box p {
-        font-size: 14px;
+      .work-submission .content p {
+        font-size: 12px;
         line-height: 1.4em;
         text-align: left;
         font-weight: 300;
         color: #f5f5f5;
         font-family: "Poppins", sans-serif;
       }
-      .work-submission .work-submission-box h5 {
-        font-size: 25px;
+      .work-submission .content h5 {
+        font-size: 20px;
         line-height: 1.4em;
         text-align: left;
         font-weight: 600;
         color: #ffffff;
         font-family: "Poppins", sans-serif;
         text-transform: capitalize;
+      }
+      .work-submission .video-container {
+        position: relative;
+      }
+
+      .work-submission .video-container video {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
       }
     </style>
   </head>
@@ -1226,35 +1221,25 @@ L9.746,15.254z"
     <!-- example end -->
 
     <!-- work-submission start-->
-    <div class="work-submission">
-      <div class="bg-video">
-        <video autoplay muted loop playsinline>
-          <source src="assets/images/videoloop2.mp4" type="video/mp4" />
-        </video>
-        <div class="overlay">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 pt-5 pb-5">
-                <div
-                  class="section-heading wow fadeInDown text-center"
-                  data-wow-duration="1s"
-                  data-wow-delay="0.5s"
-                >
-                  <b class="h6-section">Live Output</b>
-                  <h4>
-                    flexible <em>submission</em> methods for students and
-                    teachers
-                  </h4>
+    <div id="work-submission" class="work-submission">
+      <div class="container">
+        <div
+          class="section-heading wow fadeIn"
+          data-wow-duration="1s"
+          data-wow-delay="0.3s"
+        >
+          <b class="h6-section">Submitting Work</b>
+          <h4>
+            flexible <em>submission</em> methods for students and teachers
+          </h4>
 
-                  <div class="line-dec"></div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="d-flex flex-column justify-content-center align-items-start gap-2 mt-5"
-            >
+          <div class="line-dec"></div>
+        </div>
+        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
               <div
-                class="d-flex justify-content-start align-items-center gap-3 work-submission-box wow fadeInUp"
+                class="d-flex justify-content-start align-items-center gap-3"
               >
                 <div class="icon">
                   <svg
@@ -1265,7 +1250,7 @@ L9.746,15.254z"
                     fill="none"
                   >
                     <path
-                      d="M10 18H14M7.20003 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V11.8C20 12.9201 20 13.4802 19.782 13.908C19.5903 14.2843 19.2843 14.5903 18.908 14.782C18.4802 15 17.9201 15 16.8 15H7.20003C6.07992 15 5.51987 15 5.09205 14.782C4.71572 14.5903 4.40976 14.2843 4.21801 13.908C4.00003 13.4802 4.00003 12.9201 4.00003 11.8V6.2C4.00003 5.0799 4.00003 4.51984 4.21801 4.09202C4.40976 3.71569 4.71572 3.40973 5.09205 3.21799C5.51987 3 6.07992 3 7.20003 3ZM4.58888 21H19.4112C20.2684 21 20.697 21 20.9551 20.8195C21.1805 20.6618 21.3311 20.4183 21.3713 20.1462C21.4173 19.8345 21.2256 19.4512 20.8423 18.6845L20.3267 17.6534C19.8451 16.6902 19.6043 16.2086 19.2451 15.8567C18.9274 15.5456 18.5445 15.309 18.1241 15.164C17.6488 15 17.1103 15 16.0335 15H7.96659C6.88972 15 6.35128 15 5.87592 15.164C5.45554 15.309 5.07266 15.5456 4.75497 15.8567C4.39573 16.2086 4.15493 16.6902 3.67334 17.6534L3.1578 18.6845C2.77444 19.4512 2.58276 19.8345 2.6288 20.1462C2.669 20.4183 2.81952 20.6618 3.04492 20.8195C3.30306 21 3.73166 21 4.58888 21Z"
+                      d="M3 10H21M6 7.5H6.01M9 7.5H18M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z"
                       stroke="#ffffff"
                       stroke-width="2"
                       stroke-linecap="round"
@@ -1276,7 +1261,7 @@ L9.746,15.254z"
                 <div
                   class="content d-flex flex-column justify-content-start align-items-start"
                 >
-                  <h5 class="m-0 pb-2">Via Submission Page</h5>
+                  <h5 class="m-0 pb-2 pt-3">Via Submission Page</h5>
                   <p class="m-0 p-0">
                     Log in to your graded.pro account, go to the "Submit Work"
                     section, choose your subject (e.g., General Science), upload
@@ -1285,9 +1270,7 @@ L9.746,15.254z"
                 </div>
               </div>
               <div
-                class="d-flex justify-content-start align-items-start gap-3 work-submission-box wow fadeInUp"
-                data-wow-duration="1s"
-                data-wow-delay="0.5s"
+                class="d-flex justify-content-start align-items-start gap-3 mt-4 mb-4"
               >
                 <div class="icon">
                   <svg
@@ -1310,7 +1293,7 @@ L9.746,15.254z"
                         stroke-dasharray: none;
                         stroke-opacity: 1;
                       "
-                    ></path>
+                    />
                     <path
                       d="M14 18h4v2h-4z"
                       style="
@@ -1322,15 +1305,15 @@ L9.746,15.254z"
                         stroke-miterlimit: 4;
                         stroke-dasharray: none;
                       "
-                    ></path>
+                    />
                     <path
                       d="M12 12a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 .75c-1.001 0-3 .502-3 1.5V15h6v-.75c0-.998-1.999-1.5-3-1.5z"
                       style="fill: #ffffff; stroke-width: 0.375"
-                    ></path>
+                    />
                     <path
                       d="M15.75 10.5a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25zm0 2.813c-.17 0-.38.02-.602.058.203.235.352.537.352.879V15H18v-.563c0-.748-1.5-1.124-2.25-1.124zm-1.73.435c-.307.176-.52.407-.52.69v.062h1v-.25c0-.082-.032-.162-.168-.287a1.68 1.68 0 0 0-.312-.215zM8.25 10.5a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25zm0 2.813c-.75 0-2.25.376-2.25 1.124V15h2.5v-.75c0-.342.15-.644.352-.879a3.603 3.603 0 0 0-.602-.059zm1.73.435a1.68 1.68 0 0 0-.312.215c-.136.125-.168.205-.168.287v.25h1v-.063c0-.282-.213-.513-.52-.689z"
                       style="fill: #ffffff; stroke-width: 0.28125"
-                    ></path>
+                    />
                   </svg>
                 </div>
                 <div
@@ -1345,9 +1328,7 @@ L9.746,15.254z"
                 </div>
               </div>
               <div
-                class="d-flex justify-content-start align-items-center gap-3 work-submission-box wow fadeInUp"
-                data-wow-duration="1s"
-                data-wow-delay="1s"
+                class="d-flex justify-content-start align-items-center gap-3"
               >
                 <div class="icon">
                   <svg
@@ -1364,7 +1345,7 @@ L9.746,15.254z"
                   >
                     <path
                       d="M174.55,144.5L174.55,144.5c-1.4-4-5-6.5-9.2-6.5H159V23c0-11.708-9.292-21-21-21H25C12.57,2,2,12.57,2,25v183  c0,11.9,10.95,22,22.75,22l114.213,0c1.207,0,2.27,0.984,2.18,2.188c-0.095,1.266-1.153,1.812-2.393,1.812h-45.5L128,254h80  L174.55,144.5z M82.05,220.2c-3.199,0-5.599-2.399-5.6-5.598c-0.001-3.045,2.557-5.602,5.602-5.602  c3.199,0.001,5.598,2.401,5.598,5.6C87.55,217.8,85.25,220.2,82.05,220.2z M144,138h-19.65c-5.3,0-9.8,4.7-9.8,10l0,0  c0,5.3,4.5,10,9.8,10h19.8v42H18V31h126V138z M99.8,65.278c0-4.814,3.935-8.749,8.749-8.749s8.749,3.935,8.749,8.749  s-3.859,8.749-8.749,8.749C103.697,74.027,99.8,70.092,99.8,65.278z M129.905,43.616v86L32.1,129.578V43.616H129.905z   M124.06,49.576H38.098v63.191l26.285-50.011l17.918,36.677l17.804-11.729l23.955,22.732V49.576z"
-                    ></path>
+                    />
                   </svg>
                 </div>
                 <div
@@ -1379,10 +1360,39 @@ L9.746,15.254z"
                 </div>
               </div>
             </div>
+            <div class="col-12 col-lg-6">
+              <div class="video-container">
+                <video autoplay muted loop playsinline>
+                  <source
+                    src="./assets/images/videoloop2.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
+        </div>
+        <div
+          class="row text-center"
+          style="
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: 40px;
+          "
+        >
+          <a
+            href="#"
+            class="cta-button"
+            style="max-width: fit-content; margin: 0 auto"
+            >sign up now!</a
+          >
         </div>
       </div>
     </div>
+
     <!-- features end-->
 
     <!-- free trial start-->
