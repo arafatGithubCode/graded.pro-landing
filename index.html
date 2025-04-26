@@ -1,56 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <link />
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="assets/images/logo.png"
-      alt="AI Marking"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
     <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/logo.png"
-      alt="AI Grading"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="description"
-      content="AI grading tool for teachers and educators. Cutting-edge AI grading with handwriting recognition. Try it free today."
-    />
-    <meta name="author" content="Graded Pro" />
-    <link rel="canonical" href="index.html" />
-    <title>AI Grading for Teachers - Graded Pro</title>
-    <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-      name="viewport"
-    />
-    <!--     Fonts and icons     -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;&amp;family=Shadows+Into+Light&amp;display=swap"
       rel="stylesheet"
     />
 
-    <meta name="referrer" content="origin" />
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/animated.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-
-    <!-- Plyr CSS -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
-
-    <!-- Plyr JavaScript -->
-    <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js"></script>
-
+    <link rel="stylesheet" href="./assets/css/animated.css" />
+    <style>
+      body,
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #000307;
+      }
+    </style>
     <!-- WORK_SUBMISSION_CSS -->
     <style>
       .work-submission {
@@ -58,7 +41,7 @@
         text-align: center;
         position: relative;
         z-index: 2;
-        margin-top: 0;
+        margin: 0;
         background-color: #000307;
       }
 
@@ -74,6 +57,18 @@
         font-size: 35px;
         color: #fff;
         margin-bottom: 25px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      .work-submission .section-heading h4 em {
+        font-style: normal;
+        color: #ff5722;
+      }
+      .work-submission .section-heading .line-dec {
+        width: 50px;
+        height: 2px;
+        background-color: #ff5722;
       }
       .work-submission .section-heading h2 em,
       .work-submission .section-heading .line-dec {
@@ -88,15 +83,6 @@
         color: #f5f5f5;
         font-family: "Poppins", sans-serif;
       }
-      .work-submission .content h5 {
-        font-size: 20px;
-        line-height: 1.4em;
-        text-align: left;
-        font-weight: 600;
-        color: #ffffff;
-        font-family: "Poppins", sans-serif;
-        text-transform: capitalize;
-      }
       .work-submission .video-container {
         position: relative;
       }
@@ -107,1120 +93,86 @@
         border-radius: 1rem;
         box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
       }
+      .work-submission .text-center {
+        text-align: center !important;
+      }
+      .work-submission .cta-button {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        background-color: #ff5722;
+        border: none;
+        color: #ffffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .work-submission .cta-button:hover {
+        color: #ffffffff;
+        background-color: #ff784e;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(255, 87, 34, 0.7);
+      }
+      .work-submission a.cta-button {
+        text-decoration: none;
+      }
+      .work-submission .work-submission-item {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #000307;
+        color: #ffffff;
+        box-shadow: -15px -15px 15px rgba(10, 15, 25, 0.9),
+          15px 15px 15px rgba(0, 0, 0, 0.4),
+          inset -5px -5px 5px rgba(255, 255, 255, 0.05),
+          inset 5px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .work-submission .work-submission-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+      }
+      @keyframes bounceText {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-3px);
+        }
+      }
+
+      @keyframes glowShadow {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.2),
+            0 0 10px rgba(0, 123, 255, 0.3), 0 0 15px rgba(0, 123, 255, 0.4);
+        }
+        50% {
+          text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
+            0 0 15px rgba(255, 0, 150, 0.4), 0 0 20px rgba(255, 0, 150, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.2),
+            0 0 10px rgba(0, 123, 255, 0.3), 0 0 15px rgba(0, 123, 255, 0.4);
+        }
+      }
+
+      .work-submission .content h5 {
+        font-size: 20px;
+        line-height: 1.4em;
+        text-align: left;
+        font-weight: 600;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        animation: bounceText 2.5s ease-in-out infinite,
+          glowShadow 3s ease-in-out infinite;
+      }
     </style>
   </head>
-
   <body>
-    <!-- hero start-->
-    <section class="hero">
-      <div class="hero_overlay"></div>
-      <!-- ***** Header Area Start ***** -->
-      <header
-        class="header-area header-sticky wow slideInDown"
-        data-wow-duration="0.75s"
-        data-wow-delay="0s"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <nav class="main-nav">
-                <!-- ***** Logo Start ***** -->
-                <a href="index.html" class="logo">
-                  <img
-                    style="width: 80px"
-                    src="assets/images/logo.png"
-                    alt=""
-                  />
-                </a>
-                <!-- ***** Logo End ***** -->
-                <!-- ***** Menu Start ***** -->
-                <ul class="nav">
-                  <li>
-                    <a href="./pages/stdSubmit.html">Student Area</a>
-                  </li>
-                  <li class="scroll-to-section">
-                    <a href="#free-trial">Free Trial</a>
-                  </li>
-                  <li class="scroll-to-section">
-                    <a href="#pricing">Pricing</a>
-                  </li>
-                  <li>
-                    <a href="./pages/faq.html">FAQ</a>
-                  </li>
-                  <li><a href="../pages/contact.html">Contact</a></li>
-                  <li>
-                    <a href="../pages/auth.html">Login</a>
-                  </li>
-                  <li>
-                    <a class="cta-button" href="#" style="color: #fff"
-                      >Try For Free!</a
-                    >
-                  </li>
-                </ul>
-                <a class="menu-trigger">
-                  <span>Menu</span>
-                </a>
-                <!-- ***** Menu End ***** -->
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
-      <!-- ***** Header Area End ***** -->
-
-      <div class="main-banner-wrapper">
-        <div
-          class="main-banner wow fadeIn"
-          id="top"
-          data-wow-duration="1s"
-          data-wow-delay="0.5s"
-        >
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="row">
-                  <div class="col-lg-6 align-self-center">
-                    <div
-                      class="left-content show-up header-text wow fadeInLeft"
-                      data-wow-duration="1s"
-                      data-wow-delay="1s"
-                    >
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <h6 style="color: #f97255; text-transform: uppercase">
-                            Welcome to GRADED PRO
-                          </h6>
-                          <h1 style="color: #fff">
-                            AI Grading for Teachers and Educators
-                          </h1>
-                          <p style="color: #fff">
-                            Advanced AI grading with handwriting recognition,
-                            trusted by teachers worldwide. Supports US Common
-                            Core and AP, IB curriculum, UK GCSE and A level, and
-                            more.
-                          </p>
-                        </div>
-                        <div class="col-lg-12">
-                          <a class="cta-button" href="#">Try for free!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div
-                      class="wow fadeInRight"
-                      data-wow-duration="1s"
-                      data-wow-delay="0.5s"
-                    >
-                      <div class="video-container" id="videoContainer">
-                        <video
-                          id="player"
-                          class="plyr"
-                          playsinline
-                          poster="assets/images/poster-min.png"
-                        >
-                          <source
-                            src="assets/images/graded2.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support HTML5 video.
-                        </video>
-                        <!-- Play/Pause Button Overlay -->
-                        <div class="play-button-overlay" id="playButtonOverlay">
-                          &#9658;
-                          <!-- Play Icon -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hero-app">
-              <a
-                href="https://play.google.com/store/apps/details?id=pro.graded.student.companion&hl=en"
-                target="_blank"
-              >
-                <img src="./assets/images/gPlay .png" alt="play store" />
-              </a>
-              <a href="#">
-                <img src="./assets/images/appStore.png" alt="app store" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- hero end-->
-
-    <!-- new addition start-->
-    <div id="new-addition" class="new-addition section">
-      <div class="addition-left-dec">
-        <img src="assets/images/videos-left-dec.png" alt="" />
-      </div>
-      <div class="addition-right-dec">
-        <img src="assets/images/videos-right-dec.png" alt="" />
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="section-heading wow fadeInDown"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <h6>Exciting New Features</h6>
-              <h4>
-                Enhancing your experience with innovative <br />
-                <em>additions</em>
-              </h4>
-
-              <div class="line-dec"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="owl-carousel owl-banner">
-              <!-- Slide 1 -->
-              <div class="item item-1">
-                <div class="overlay"></div>
-                <div class="header-text">
-                  <div class="top-title">
-                    <span class="category">AI Detection</span>
-                    <div class="slide-card">
-                      <div class="cover">
-                        <img src="assets/images/detectAi.png" alt="" />
-                      </div>
-                      <div class="details">
-                        <h3>Check Plagiarism</h3>
-                        <div>
-                          <img
-                            src="./assets/lottie-animation/plagiarism.gif"
-                            class="img-fluid rounded-top"
-                            alt="AI Detection"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2>Uphold Academic Integrity with AI Detection</h2>
-                  <p>
-                    Our advanced AI Detection System monitors student
-                    submissions to flag potential instances of unauthorized AI
-                    usage, ensuring fairness and maintaining academic honesty.
-                  </p>
-                  <div class="buttons">
-                    <div class="addition-item-btn">
-                      <a class="cta-button" href="#">Learn More</a>
-                    </div>
-                    <div class="icon-button">
-                      <a href="#"
-                        ><i class="fa fa-play"></i> What's AI Detection?</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="item item-2">
-                <div class="overlay"></div>
-                <div class="header-text">
-                  <div class="top-title">
-                    <span class="category">AI Models</span>
-                    <div class="slide-card">
-                      <div class="cover">
-                        <svg
-                          width="120px"
-                          height="120px"
-                          viewBox="0 -1.5 21 21"
-                          version="1.1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                        >
-                          <title>swipe_right [#1378]</title>
-                          <desc>Created with Sketch.</desc>
-                          <defs></defs>
-                          <g
-                            id="Page-1"
-                            stroke="none"
-                            stroke-width="1"
-                            fill="none"
-                            fill-rule="evenodd"
-                          >
-                            <g
-                              id="Dribbble-Light-Preview"
-                              transform="translate(-139.000000, -800.000000)"
-                              fill="#fff"
-                            >
-                              <g
-                                id="icons"
-                                transform="translate(56.000000, 160.000000)"
-                              >
-                                <path
-                                  d="M87.2,645.00025 C87.2,644.44825 86.7296,644.00025 86.15,644.00025 L84.05,644.00025 C83.4704,644.00025 83,644.44825 83,645.00025 C83,645.55225 83.4704,646.00025 84.05,646.00025 L86.15,646.00025 C86.7296,646.00025 87.2,645.55225 87.2,645.00025 M103.38575,643.83125 L103.01195,643.47425 L99.67295,640.29325 C99.2624,639.90225 98.5967,639.90225 98.1872,640.29325 C97.77665,640.68425 97.77665,641.31725 98.1872,641.70725 L99.95225,643.26825 C100.283,643.58325 100.04885,644.00025 99.58055,644.00025 L94.18985,644.00025 C93.6092,644.00025 93.13985,644.44825 93.13985,645.00025 C93.13985,645.55225 93.6092,646.00025 94.18985,646.00025 L99.58265,646.00025 C100.05095,646.00025 100.2851,646.66025 99.95435,646.97525 L98.1872,648.71725 C97.7777,649.10825 97.7777,649.77125 98.1872,650.16225 C98.59775,650.55225 99.2624,650.56725 99.6719,650.17725 L103.38575,646.64825 C104.20475,645.86725 104.20475,644.61225 103.38575,643.83125 M97.3451,653.04225 L96.9965,656.59925 C96.80015,657.53425 95.9381,658.00025 94.93745,658.00025 L89.8607,658.00025 C89.51525,658.00025 89.1908,658.04525 88.9955,657.77425 L86.7275,653.84725 C86.4419,653.45425 86.49125,652.92325 86.8451,652.58625 C87.3008,652.15225 88.05575,652.21425 88.42535,652.71625 L89.3,653.90925 L89.3,645.41425 C89.3,644.86225 89.7746,644.41425 90.3542,644.41425 C91.10075,644.41425 91.4084,645.06025 91.4084,645.41425 L91.4168,650.45825 L95.94965,650.85625 C96.9545,651.17425 97.553,652.05325 97.3451,653.04225"
-                                  id="swipe_right-[#1378]"
-                                ></path>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="details">
-                        <h3>
-                          Cost Effective <br />
-                          Model
-                        </h3>
-
-                        <img
-                          src="./assets/lottie-animation/ai-model.gif"
-                          alt="ai-model"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <h2>Choose the Right AI Model for Your Needs</h2>
-                  <p>
-                    Select between cost-effective AI models for standard
-                    precision or high-precision models for greater accuracy to
-                    optimize your workflow.
-                  </p>
-                  <div class="buttons">
-                    <div class="addition-item-btn">
-                      <a class="cta-button" href="#">Learn More</a>
-                    </div>
-                    <div class="icon-button">
-                      <a href="#"
-                        ><i class="fa fa-play"></i> What's AI Model
-                        Selection?</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="item item-3" style="position: relative">
-                <div class="overlay"></div>
-                <div class="companion-app-slide">
-                  <img
-                    style="width: 100%; height: 100%; object-fit: contain"
-                    src="./assets/images/logo.png"
-                    alt=""
-                  />
-                </div>
-                <div class="header-text">
-                  <div class="top-title">
-                    <span class="category">Companion Apps</span>
-                    <div class="slide-card">
-                      <div class="cover">
-                        <img
-                          style="width: 100%; height: 100%; object-fit: contain"
-                          src="assets/images/gPlay .png"
-                          alt=""
-                        />
-                        <a href="#">
-                          <button>download</button>
-                          <svg
-                            width="40px"
-                            height="40px"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10V11H17C18.933 11 20.5 12.567 20.5 14.5C20.5 16.433 18.933 18 17 18H16.9C16.3477 18 15.9 18.4477 15.9 19C15.9 19.5523 16.3477 20 16.9 20H17C20.0376 20 22.5 17.5376 22.5 14.5C22.5 11.7793 20.5245 9.51997 17.9296 9.07824C17.4862 6.20213 15.0003 4 12 4C8.99974 4 6.51381 6.20213 6.07036 9.07824C3.47551 9.51997 1.5 11.7793 1.5 14.5C1.5 17.5376 3.96243 20 7 20H7.1C7.65228 20 8.1 19.5523 8.1 19C8.1 18.4477 7.65228 18 7.1 18H7C5.067 18 3.5 16.433 3.5 14.5C3.5 12.567 5.067 11 7 11H8V10ZM13 11C13 10.4477 12.5523 10 12 10C11.4477 10 11 10.4477 11 11V16.5858L9.70711 15.2929C9.31658 14.9024 8.68342 14.9024 8.29289 15.2929C7.90237 15.6834 7.90237 16.3166 8.29289 16.7071L11.2929 19.7071C11.6834 20.0976 12.3166 20.0976 12.7071 19.7071L15.7071 16.7071C16.0976 16.3166 16.0976 15.6834 15.7071 15.2929C15.3166 14.9024 14.6834 14.9024 14.2929 15.2929L13 16.5858V11Z"
-                              fill="#fff"
-                            />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="details">
-                        <img
-                          style="width: 100%; height: 100%; object-fit: contain"
-                          src="assets/images/appStore.png"
-                          alt=""
-                        />
-                        <a href="#">
-                          <button>download</button>
-                          <svg
-                            width="40px"
-                            height="40px"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10V11H17C18.933 11 20.5 12.567 20.5 14.5C20.5 16.433 18.933 18 17 18H16.9C16.3477 18 15.9 18.4477 15.9 19C15.9 19.5523 16.3477 20 16.9 20H17C20.0376 20 22.5 17.5376 22.5 14.5C22.5 11.7793 20.5245 9.51997 17.9296 9.07824C17.4862 6.20213 15.0003 4 12 4C8.99974 4 6.51381 6.20213 6.07036 9.07824C3.47551 9.51997 1.5 11.7793 1.5 14.5C1.5 17.5376 3.96243 20 7 20H7.1C7.65228 20 8.1 19.5523 8.1 19C8.1 18.4477 7.65228 18 7.1 18H7C5.067 18 3.5 16.433 3.5 14.5C3.5 12.567 5.067 11 7 11H8V10ZM13 11C13 10.4477 12.5523 10 12 10C11.4477 10 11 10.4477 11 11V16.5858L9.70711 15.2929C9.31658 14.9024 8.68342 14.9024 8.29289 15.2929C7.90237 15.6834 7.90237 16.3166 8.29289 16.7071L11.2929 19.7071C11.6834 20.0976 12.3166 20.0976 12.7071 19.7071L15.7071 16.7071C16.0976 16.3166 16.0976 15.6834 15.7071 15.2929C15.3166 14.9024 14.6834 14.9024 14.2929 15.2929L13 16.5858V11Z"
-                              fill="#fff"
-                            />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <h2>Enhance Experience with Companion Apps</h2>
-                  <p>
-                    Explore our newly introduced companion apps that work
-                    seamlessly with the main platform to boost your productivity
-                    and efficiency.
-                  </p>
-                  <div class="buttons">
-                    <div class="addition-item-btn">
-                      <a class="cta-button" href="#">Learn More</a>
-                    </div>
-                    <div class="icon-button">
-                      <a href="#"
-                        ><i class="fa fa-play"></i> What's a Companion App?</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="item item-4">
-                <div class="overlay"></div>
-                <div class="header-text">
-                  <div class="top-title">
-                    <span class="category">Enhanced Feedback</span>
-                    <div class="slide-card">
-                      <div class="cover">
-                        <img src="assets/images/voice-card.png" alt="" />
-                      </div>
-                      <div class="details">
-                        <h3>Audio Comments</h3>
-                        <div>
-                          <img
-                            src="./assets/lottie-animation/audio-ditect.gif"
-                            alt="audio-ditect"
-                            class="img-fluid"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2>Provide Personalized Feedback with Voice Notes</h2>
-                  <p>
-                    Empower instructors with detailed text annotations and voice
-                    note features to offer students more meaningful and
-                    personalized feedback on their work.
-                  </p>
-                  <div class="buttons">
-                    <div class="addition-item-btn">
-                      <a class="cta-button" href="#">Learn More</a>
-                    </div>
-                    <div class="icon-button">
-                      <a href="#">
-                        <i class="fa fa-play"></i> What's Enhanced Feedback?
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- new addition end-->
-
-    <!-- example start-->
-    <div id="examples" class="examples section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="section-heading wow fadeInDown"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <h6>Live Output</h6>
-              <h4>Explore Our AI Grading <em>Examples</em></h4>
-
-              <div class="line-dec"></div>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="naccs">
-              <div class="grid">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="menu">
-                      <div class="first-thumb active">
-                        <div class="thumb">
-                          <span class="icon">
-                            <svg
-                              fill="#fff"
-                              version="1.1"
-                              id="Layer_1"
-                              xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink"
-                              viewBox="0 0 32 32"
-                              xml:space="preserve"
-                            >
-                              <path
-                                id="art--tools--01_1_"
-                                d="M1,31.36c-0.094,0-0.186-0.037-0.254-0.105c-0.104-0.104-0.134-0.262-0.077-0.396l3-7
-c0.018-0.042,0.044-0.081,0.077-0.113L26.451,1.04c0.256-0.257,0.598-0.398,0.961-0.398c0,0,0,0,0.001,0
-c0.363,0,0.705,0.141,0.962,0.398l2.586,2.586c0.529,0.53,0.529,1.392,0,1.923L8.254,28.255c-0.032,0.032-0.07,0.058-0.113,0.076
-l-7,3C1.096,31.351,1.048,31.36,1,31.36z M2.472,28.48l-0.786,1.834l1.833-0.786L2.472,28.48z M2.777,27.768l1.455,1.456
-l3.408-1.461V26.36H6c-0.199,0-0.36-0.161-0.36-0.36v-1.64H4.237L2.777,27.768z M6.36,25.64H8c0.199,0,0.36,0.161,0.36,0.36v1.131
-L25.991,9.5L22.5,6.009L4.869,23.64H6c0.199,0,0.36,0.161,0.36,0.36V25.64z M23.01,5.5l3.49,3.491L27.491,8L24,4.509L23.01,5.5z
- M24.51,4L28,7.491l2.451-2.451c0.249-0.25,0.249-0.656,0-0.905l-2.586-2.586c-0.121-0.121-0.281-0.188-0.452-0.188
-c-0.001,0-0.001,0-0.001,0c-0.171,0-0.331,0.067-0.451,0.188L24.51,4z M26,31.36c-0.092,0-0.185-0.035-0.255-0.105l-9-9l0.509-0.51
-l1.245,1.246l2.245-2.246l0.51,0.51L19.009,23.5L21,25.491l1.245-1.246l0.51,0.51L21.509,26l1.991,1.991l2.245-2.246l0.51,0.51
-L24.009,28.5L26,30.491L30.491,26l-8.746-8.745l0.51-0.509l9,9c0.141,0.141,0.141,0.369,0,0.51l-5,5
-C26.185,31.325,26.092,31.36,26,31.36z M8.754,23.755l-0.509-0.51l14.5-14.5l0.51,0.509L8.754,23.755z M9.746,15.254l-9-9
-c-0.141-0.141-0.141-0.368,0-0.509l5-5c0.141-0.141,0.368-0.141,0.509,0l9,9l-0.509,0.509L6,1.509L1.509,6L3.5,7.991l2.246-2.245
-l0.509,0.509L4.009,8.5L6,10.491l1.246-1.245l0.509,0.509L6.509,11L8.5,12.991l2.246-2.245l0.509,0.509L9.009,13.5l1.245,1.246
-L9.746,15.254z"
-                              />
-                              <rect
-                                id="_Transparent_Rectangle"
-                                style="fill: none"
-                                width="32"
-                                height="32"
-                              />
-                            </svg>
-                          </span>
-
-                          Art
-                        </div>
-                      </div>
-                      <div>
-                        <div class="thumb">
-                          <span class="icon">
-                            <svg
-                              width="60px"
-                              height="60px"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M13 31V17H21"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M13 24H20.5"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M13 31H20.5"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M26 31L26 19"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M26 31L26 24.5C26 22.0147 28.0147 20 30.5 20V20C32.9853 20 35 22.0147 35 24.5L35 31"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <rect
-                                x="6"
-                                y="6"
-                                width="36"
-                                height="36"
-                                rx="3"
-                                stroke="#fff"
-                                stroke-width="4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </span>
-
-                          English
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="thumb computerSFont">
-                          <span class="icon">
-                            <svg
-                              width="60px"
-                              height="60px"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M2 6C2 4.34315 3.34315 3 5 3H19C20.6569 3 22 4.34315 22 6V15C22 16.6569 20.6569 18 19 18H13V19H15C15.5523 19 16 19.4477 16 20C16 20.5523 15.5523 21 15 21H9C8.44772 21 8 20.5523 8 20C8 19.4477 8.44772 19 9 19H11V18H5C3.34315 18 2 16.6569 2 15V6ZM5 5C4.44772 5 4 5.44772 4 6V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V6C20 5.44772 19.5523 5 19 5H5Z"
-                                fill="#fff"
-                              />
-                            </svg>
-                          </span>
-                          Computer Science
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="thumb">
-                          <span class="icon">
-                            <svg
-                              width="60px"
-                              height="60px"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 8V12L14.5 14.5"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M5.60423 5.60423L5.0739 5.0739V5.0739L5.60423 5.60423ZM4.33785 6.87061L3.58786 6.87438C3.58992 7.28564 3.92281 7.61853 4.33408 7.6206L4.33785 6.87061ZM6.87963 7.63339C7.29384 7.63547 7.63131 7.30138 7.63339 6.88717C7.63547 6.47296 7.30138 6.13549 6.88717 6.13341L6.87963 7.63339ZM5.07505 4.32129C5.07296 3.90708 4.7355 3.57298 4.32129 3.57506C3.90708 3.57715 3.57298 3.91462 3.57507 4.32882L5.07505 4.32129ZM3.75 12C3.75 11.5858 3.41421 11.25 3 11.25C2.58579 11.25 2.25 11.5858 2.25 12H3.75ZM16.8755 20.4452C17.2341 20.2378 17.3566 19.779 17.1492 19.4204C16.9418 19.0619 16.483 18.9393 16.1245 19.1468L16.8755 20.4452ZM19.1468 16.1245C18.9393 16.483 19.0619 16.9418 19.4204 17.1492C19.779 17.3566 20.2378 17.2341 20.4452 16.8755L19.1468 16.1245ZM5.14033 5.07126C4.84598 5.36269 4.84361 5.83756 5.13505 6.13191C5.42648 6.42626 5.90134 6.42862 6.19569 6.13719L5.14033 5.07126ZM18.8623 5.13786C15.0421 1.31766 8.86882 1.27898 5.0739 5.0739L6.13456 6.13456C9.33366 2.93545 14.5572 2.95404 17.8017 6.19852L18.8623 5.13786ZM5.0739 5.0739L3.80752 6.34028L4.86818 7.40094L6.13456 6.13456L5.0739 5.0739ZM4.33408 7.6206L6.87963 7.63339L6.88717 6.13341L4.34162 6.12062L4.33408 7.6206ZM5.08784 6.86684L5.07505 4.32129L3.57507 4.32882L3.58786 6.87438L5.08784 6.86684ZM12 3.75C16.5563 3.75 20.25 7.44365 20.25 12H21.75C21.75 6.61522 17.3848 2.25 12 2.25V3.75ZM12 20.25C7.44365 20.25 3.75 16.5563 3.75 12H2.25C2.25 17.3848 6.61522 21.75 12 21.75V20.25ZM16.1245 19.1468C14.9118 19.8483 13.5039 20.25 12 20.25V21.75C13.7747 21.75 15.4407 21.2752 16.8755 20.4452L16.1245 19.1468ZM20.25 12C20.25 13.5039 19.8483 14.9118 19.1468 16.1245L20.4452 16.8755C21.2752 15.4407 21.75 13.7747 21.75 12H20.25ZM6.19569 6.13719C7.68707 4.66059 9.73646 3.75 12 3.75V2.25C9.32542 2.25 6.90113 3.32791 5.14033 5.07126L6.19569 6.13719Z"
-                                fill="#fff"
-                              />
-                            </svg>
-                          </span>
-                          History
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class="thumb">
-                          <span style="padding-bottom: 10px">
-                            <svg
-                              width="60px"
-                              height="60px"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M14.4207 5.63965H21.7007"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.29956 5.64014H9.57956"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M14.4207 15.3301H21.7007"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M14.4207 21.3896H21.7007"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M18.0894 9.27V2"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M2.29956 22L9.57956 14.73"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M9.57956 22L2.29956 14.73"
-                                stroke="#fff"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </span>
-                          <br />
-                          Mathematics
-                        </div>
-                      </div>
-
-                      <div class="last-thumb">
-                        <div class="thumb primarySFont">
-                          <span style="padding-bottom: 10px">
-                            <svg
-                              width="60px"
-                              height="60px"
-                              viewBox="0 0 24 24"
-                              id="Layer_1"
-                              data-name="Layer 1"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <defs>
-                                <style>
-                                  .cls-1 {
-                                    fill: none;
-                                    stroke: #fff;
-                                    stroke-miterlimit: 10;
-                                    stroke-width: 1.91px;
-                                  }
-                                </style>
-                              </defs>
-                              <path
-                                class="cls-1"
-                                d="M15.82,13.91A3.82,3.82,0,1,1,12,10.09,3.82,3.82,0,0,1,15.82,13.91Z"
-                              />
-                              <circle
-                                class="cls-1"
-                                cx="12"
-                                cy="3.41"
-                                r="1.91"
-                              />
-                              <circle
-                                class="cls-1"
-                                cx="3.41"
-                                cy="20.59"
-                                r="1.91"
-                              />
-                              <circle
-                                class="cls-1"
-                                cx="20.59"
-                                cy="20.59"
-                                r="1.91"
-                              />
-                              <line
-                                class="cls-1"
-                                x1="8.98"
-                                y1="16.25"
-                                x2="4.92"
-                                y2="19.42"
-                              />
-                              <line
-                                class="cls-1"
-                                x1="19.08"
-                                y1="19.42"
-                                x2="15.02"
-                                y2="16.25"
-                              />
-                              <line
-                                class="cls-1"
-                                x1="12"
-                                y1="10.09"
-                                x2="12"
-                                y2="5.32"
-                              />
-                            </svg>
-                          </span>
-                          <br />
-                          Primary Science
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <ul class="nacc">
-                      <li class="active">
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>Art</h4>
-                                  <p>
-                                    The brief for students was to create a
-                                    lifelike drawing of a skull, with a
-                                    particular focus on mastering the art of
-                                    shading. Graded Pro automatically generated
-                                    a comprehensive rubric tailored to assess
-                                    the nuances of each student's artwork. Once
-                                    the students uploaded their drawings, the
-                                    system meticulously evaluated every piece,
-                                    offering detailed and constructive feedback.
-                                    The grading criteria encompassed accuracy,
-                                    depth, and the subtleties of shading
-                                    techniques, ensuring a thorough assessment.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i> Comprehensive
-                                      Rubric Generation</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Detailed
-                                      Feedback</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Accuracy
-                                      Assessment</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Depth
-                                      Evaluation</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Shading
-                                      Technique Analysis</span
-                                    >
-                                  </div>
-                                  <p>
-                                    Each artwork receives individualized,
-                                    constructive feedback, guiding students in
-                                    their artistic development.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/artDetails1.html"
-                                  class="right-image"
-                                >
-                                  <img src="/assets/images/1-min.png" alt="" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>English</h4>
-                                  <p>
-                                    In an imaginative creative writing
-                                    assignment, students were tasked with
-                                    writing a short story about a mysterious
-                                    book that grants magical powers to its
-                                    reader. Graded Pro automatically generated a
-                                    comprehensive rubric tailored to assess the
-                                    creative elements of each story.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i>
-                                      Originality</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Plot
-                                      Development</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i>
-                                      Characterization</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Adherence to
-                                      Theme</span
-                                    >
-                                  </div>
-                                  <p>
-                                    This student uploaded a handwritten
-                                    submission, which Graded Pro effortlessly
-                                    interpreted and assessed.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/englishDetails2.html"
-                                  class="right-image"
-                                >
-                                  <img
-                                    src="assets/images/2-min.png"
-                                    alt="English creative writing assessment"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>Computer Science</h4>
-                                  <p>
-                                    Students were set a task to write code that
-                                    ordered an array of numbers. To submit their
-                                    work, students took a screenshot of their
-                                    code and uploaded it as an image. Graded Pro
-                                    demonstrated its remarkable versatility by
-                                    automatically detecting the programming
-                                    language used in each submission and
-                                    recreating the code in a code editor style
-                                    for accurate assessment.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i> Syntax</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i>
-                                      Functionality</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Algorithm
-                                      Speed</span
-                                    >
-                                  </div>
-                                  <p>
-                                    The teacher specified that grading would
-                                    focus on syntax, functionality, and
-                                    algorithm speed. Graded Pro seamlessly
-                                    generated a detailed rubric based on these
-                                    criteria, providing precise and insightful
-                                    feedback for each student's work.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/computerScienceDetails3.html"
-                                  class="right-image"
-                                >
-                                  <img
-                                    src="assets/images/3-min.png"
-                                    alt="Computer Science coding assessment"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>History</h4>
-                                  <p>
-                                    Students were set an essay exploring the
-                                    critical roles of women during World War II.
-                                    The brief required them to detail the
-                                    remarkable transition of women from
-                                    traditional domestic roles to pivotal
-                                    positions in the workforce and military
-                                    across various countries.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i> Historical
-                                      Accuracy</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Depth of
-                                      Analysis</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Clarity of
-                                      Argument</span
-                                    >
-                                  </div>
-                                  <p>
-                                    Graded Pro demonstrated its advanced
-                                    capabilities by automatically generating a
-                                    comprehensive rubric tailored to assess each
-                                    aspect of the essays. This rubric ensured
-                                    that key elements, such as historical
-                                    accuracy, depth of analysis, and clarity of
-                                    argument, were meticulously evaluated. In
-                                    this case, the student submitted a
-                                    word-processed document.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/historyDetails4.html"
-                                  class="right-image"
-                                >
-                                  <img
-                                    src="assets/images/4-min.png"
-                                    alt="History essay assessment"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>Mathematics</h4>
-                                  <p>
-                                    Students were tasked with solving a complex
-                                    statistical problem, with most opting to
-                                    submit handwritten work. Graded Pro,
-                                    showcasing its advanced capabilities,
-                                    seamlessly recognized the mathematical
-                                    content and converted the handwritten
-                                    submissions into neatly typeset text.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i> Handwritten
-                                      Recognition</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Typeset
-                                      Transformation</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Independent
-                                      Problem Solving</span
-                                    >
-                                  </div>
-                                  <p>
-                                    This transformation not only enhanced
-                                    readability but also streamlined the grading
-                                    process. Remarkably, Graded Pro required no
-                                    pre-set rubric or solutions for this task.
-                                    The AI's sophisticated algorithms were
-                                    equipped to understand and solve the problem
-                                    independently, ensuring precise and accurate
-                                    grading.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/mathDetails5.html"
-                                  class="right-image"
-                                >
-                                  <img
-                                    src="assets/images/5-min.png"
-                                    alt="Mathematics grading assessment"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div>
-                          <div class="thumb">
-                            <div class="row">
-                              <div class="col-lg-6 align-self-center">
-                                <div class="left-text">
-                                  <h4>Primary Science</h4>
-                                  <p>
-                                    Primary-aged children were asked to draw a
-                                    diagram explaining how solar energy can
-                                    power a house. The assignment encouraged
-                                    students to visualize and articulate their
-                                    understanding of renewable energy in a
-                                    creative and engaging way.
-                                  </p>
-                                  <div class="ticks-list">
-                                    <span
-                                      ><i class="fa fa-check"></i> AI
-                                      Interpretation of Diagrams</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i> Recognition
-                                      of Key Elements</span
-                                    >
-                                    <span
-                                      ><i class="fa fa-check"></i>
-                                      Age-Appropriate Feedback</span
-                                    >
-                                  </div>
-                                  <p>
-                                    Despite the hand-drawn nature of the
-                                    submissions, Graded Pro's advanced AI
-                                    seamlessly interpreted each diagram,
-                                    recognizing key elements and concepts
-                                    depicted by the young learners. The system
-                                    then provided constructive feedback that was
-                                    not only accurate but also tailored to be
-                                    age-appropriate and easy for younger
-                                    children to understand.
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <a
-                                  href="../feedback/primaryScienceDetails6.html"
-                                  class="right-image"
-                                >
-                                  <img
-                                    src="assets/images/6-min.png"
-                                    alt="Primary Science grading assessment"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="row text-center"
-          style="z-index: 1; position: absolute; left: 0; right: 0"
-        >
-          <a
-            href="#"
-            class="cta-button"
-            style="max-width: fit-content; margin: 0 auto"
-            >Try Ai Grading Now!</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- example end -->
-
-    <!-- work-submission start-->
     <div id="work-submission" class="work-submission">
       <div class="container">
         <div
@@ -1236,26 +188,164 @@ L9.746,15.254z"
           <div class="line-dec"></div>
         </div>
         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-          <div class="row g-4">
+          <div class="row g-4 align-items-center">
             <div class="col-12 col-lg-6">
               <div
-                class="d-flex justify-content-start align-items-center gap-3"
+                class="d-flex justify-content-start align-items-center gap-3 work-submission-item"
               >
                 <div class="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
                     width="80px"
                     height="80px"
-                    viewBox="0 0 24 24"
-                    fill="none"
+                    viewBox="0 0 256 256"
+                    xml:space="preserve"
                   >
-                    <path
-                      d="M3 10H21M6 7.5H6.01M9 7.5H18M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z"
-                      stroke="#ffffff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
+                    <g
+                      style="
+                        stroke: none;
+                        stroke-width: 0;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 10;
+                        fill: none;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+                    >
+                      <path
+                        d="M 26.698 45.462 c -10.516 0 -19.071 -8.556 -19.071 -19.071 v -6.352 c 0 -10.516 8.556 -19.072 19.071 -19.072 c 10.516 0 19.072 8.556 19.072 19.072 v 6.352 C 45.77 36.906 37.214 45.462 26.698 45.462 z M 26.698 2.967 c -9.413 0 -17.071 7.659 -17.071 17.072 v 6.352 c 0 9.413 7.658 17.071 17.071 17.071 S 43.77 35.804 43.77 26.39 v -6.352 C 43.77 10.625 36.111 2.967 26.698 2.967 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 16.806 80.191 c -9.266 0 -16.805 -7.538 -16.805 -16.804 c 0 -10.986 8.938 -19.924 19.924 -19.924 h 13.546 c 1.387 0 2.773 0.144 4.121 0.427 c 0.541 0.114 0.887 0.644 0.773 1.184 c -0.114 0.541 -0.645 0.885 -1.184 0.773 c -1.213 -0.255 -2.461 -0.384 -3.71 -0.384 H 19.925 c -9.883 0 -17.924 8.041 -17.924 17.924 c 0 8.163 6.641 14.804 14.805 14.804 c 0.552 0 1 0.447 1 1 C 17.806 79.744 17.358 80.191 16.806 80.191 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 27.992 68.656 h -9.114 c -3.477 0 -6.306 -2.829 -6.306 -6.306 c 0 -0.553 0.448 -1 1 -1 c 0.552 0 1 0.447 1 1 c 0 2.374 1.932 4.306 4.306 4.306 h 9.114 c 0.552 0 1 0.447 1 1 C 28.991 68.209 28.544 68.656 27.992 68.656 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 13.572 63.35 c -0.552 0 -1 -0.447 -1 -1 c 0 -1.64 0.528 -3.191 1.527 -4.487 c 0.337 -0.439 0.964 -0.521 1.403 -0.182 c 0.437 0.337 0.519 0.965 0.181 1.402 c -0.727 0.943 -1.111 2.072 -1.111 3.267 C 14.572 62.903 14.124 63.35 13.572 63.35 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 18.144 21.114 c -3.429 0 -6.718 -0.549 -9.776 -1.633 c -0.428 -0.151 -0.7 -0.572 -0.663 -1.024 c 0.808 -9.807 9.15 -17.49 18.992 -17.49 c 0.552 0 1 0.448 1 1 s -0.448 1 -1 1 c -8.549 0 -15.833 6.475 -16.918 14.88 c 2.632 0.841 5.441 1.268 8.364 1.268 c 5.442 0 10.502 -1.474 14.246 -4.151 c 0.348 -0.249 0.815 -0.249 1.163 0 c 2.98 2.13 6.998 3.546 11.313 3.985 c 0.55 0.056 0.95 0.546 0.894 1.096 c -0.056 0.549 -0.551 0.958 -1.096 0.894 c -4.384 -0.446 -8.504 -1.841 -11.692 -3.947 C 28.96 19.654 23.726 21.114 18.144 21.114 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 80.109 80.191 c -0.094 0 -0.189 -0.013 -0.284 -0.041 c -0.529 -0.157 -0.831 -0.714 -0.675 -1.243 l 8.719 -29.441 c 0.282 -0.952 0.103 -1.956 -0.492 -2.752 c -0.594 -0.795 -1.505 -1.252 -2.498 -1.252 H 39.623 c -2.365 0 -4.486 1.584 -5.157 3.852 l -8.931 30.161 c -0.157 0.529 -0.714 0.832 -1.243 0.675 c -0.529 -0.157 -0.832 -0.713 -0.675 -1.243 l 8.931 -30.161 c 0.921 -3.111 3.83 -5.284 7.075 -5.284 h 45.255 c 1.631 0 3.125 0.749 4.101 2.056 c 0.977 1.307 1.27 2.952 0.808 4.517 l -8.719 29.441 C 80.939 79.91 80.54 80.191 80.109 80.191 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 57.885 67.855 c -0.16 0 -0.319 -0.01 -0.479 -0.028 c -1.11 -0.132 -2.107 -0.739 -2.808 -1.71 c -1 -1.386 -1.333 -3.35 -0.913 -5.388 c 0.729 -3.55 3.448 -6.069 6.192 -5.75 c 1.111 0.133 2.108 0.74 2.809 1.712 c 0.999 1.386 1.331 3.349 0.911 5.386 l 0 0 C 62.909 65.421 60.457 67.855 57.885 67.855 z M 59.402 56.951 c -1.595 0 -3.277 1.843 -3.759 4.181 c -0.303 1.47 -0.087 2.896 0.576 3.815 c 0.261 0.361 0.719 0.811 1.422 0.894 c 1.658 0.205 3.49 -1.71 3.996 -4.166 v -0.001 c 0.303 -1.469 0.088 -2.894 -0.574 -3.813 c -0.261 -0.362 -0.72 -0.811 -1.423 -0.895 C 59.561 56.956 59.481 56.951 59.402 56.951 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M 85.447 89.033 H 4.554 c -2.511 0 -4.553 -2.043 -4.553 -4.554 v -1.735 c 0 -2.511 2.042 -4.554 4.553 -4.554 h 80.893 c 2.511 0 4.553 2.043 4.553 4.554 v 1.735 C 89.999 86.99 87.957 89.033 85.447 89.033 z M 4.554 80.191 c -1.408 0 -2.553 1.145 -2.553 2.554 v 1.735 c 0 1.408 1.145 2.554 2.553 2.554 h 80.893 c 1.407 0 2.553 -1.145 2.553 -2.554 v -1.735 c 0 -1.408 -1.145 -2.554 -2.553 -2.554 H 4.554 z"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                          fill: rgb(255, 255, 255);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" matrix(1 0 0 1 0 0) "
+                        stroke-linecap="round"
+                      />
+                    </g>
                   </svg>
                 </div>
                 <div
@@ -1270,7 +360,7 @@ L9.746,15.254z"
                 </div>
               </div>
               <div
-                class="d-flex justify-content-start align-items-start gap-3 mt-4 mb-4"
+                class="d-flex justify-content-start align-items-start gap-3 mt-4 mb-4 work-submission-item"
               >
                 <div class="icon">
                   <svg
@@ -1328,7 +418,7 @@ L9.746,15.254z"
                 </div>
               </div>
               <div
-                class="d-flex justify-content-start align-items-center gap-3"
+                class="d-flex justify-content-start align-items-center gap-3 work-submission-item"
               >
                 <div class="icon">
                   <svg
@@ -1364,7 +454,7 @@ L9.746,15.254z"
               <div class="video-container">
                 <video autoplay muted loop playsinline>
                   <source
-                    src="./assets/images/videoloop2.mp4"
+                    src="./assets/content/videoloop2.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.
@@ -1381,6 +471,7 @@ L9.746,15.254z"
             left: 0;
             right: 0;
             margin-top: 40px;
+            width: 100%;
           "
         >
           <a
@@ -1393,679 +484,7 @@ L9.746,15.254z"
       </div>
     </div>
 
-    <!-- features end-->
-
-    <!-- free trial start-->
-    <div id="free-trial" class="free-trial section">
-      <div class="container">
-        <div class="background">
-          <div class="free-trial-container">
-            <h2 class="heading">Free Trial</h2>
-            <p class="subheading">Sign up and get 30 FREE CREDITS!</p>
-            <p class="description">
-              Step into the future of educational technology today!
-            </p>
-            <p class="note">No credit card required.</p>
-            <button class="cta-button">START TRIAL NOW</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- free trial end-->
-
-    <!-- pricing start-->
-    <div id="pricing" class="pricing">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div
-              class="section-heading wow fadeInDown"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <h6>Choose a plan that fits your needs and budget</h6>
-              <h4>Our <em>Pricing</em> Plans</h4>
-              <div class="line-dec"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pricing_card">
-          <div class="custom_center">
-            <div class="pricing_card_wrapper">
-              <div
-                class="pricing_card_content"
-                class="wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.8s"
-              >
-                <p class="category">Individual Teachers</p>
-                <p class="desc">Best for a teacher getting started.</p>
-                <p class="plan_price">$19<span>/month</span></p>
-                <div class="price_divider_line"></div>
-                <div style="padding: 30px 0">
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>900 Credits</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>No Expiration Date</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Access to basic features</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Email support</p>
-                  </div>
-
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Up to 10 users</p>
-                  </div>
-                </div>
-                <button
-                  class="cta-button"
-                  style="width: 100%; text-align: center"
-                >
-                  sign up
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom_center">
-            <div class="pricing_card_wrapper">
-              <div
-                class="pricing_card_content"
-                class="wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.8s"
-              >
-                <p class="category">Individual Teachers</p>
-                <p class="desc">Best for a teacher getting started.</p>
-                <p class="plan_price">$25<span>/month</span></p>
-                <div class="price_divider_line"></div>
-                <div style="padding: 30px 0">
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>2400 Credits</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>No Expiration Date</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Access to basic features</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Email support</p>
-                  </div>
-
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Up to 10 users</p>
-                  </div>
-                </div>
-                <button
-                  class="cta-button"
-                  style="width: 100%; text-align: center"
-                >
-                  sign up
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom_center">
-            <div class="pricing_card_wrapper">
-              <div
-                class="pricing_card_content"
-                class="wow fadeIn"
-                data-wow-duration="1s"
-                data-wow-delay="0.8s"
-              >
-                <p class="category">Whole School</p>
-                <p class="desc">Best for a teacher getting started.</p>
-                <p class="plan_price whole_sale">Contact Us</p>
-                <div class="price_divider_line"></div>
-                <div style="padding: 30px 0">
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Whole School Solution Yearly contracts</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>No Expiration Date</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Access to basic features</p>
-                  </div>
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Email support</p>
-                  </div>
-
-                  <div class="price_pack_list">
-                    <svg
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6111L8.92308 17.5L20 6.5"
-                        stroke="#fff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p>Up to 10 users</p>
-                  </div>
-                </div>
-                <span class="popular-tag">Most Popular</span>
-                <button
-                  class="cta-button"
-                  style="width: 100%; text-align: center"
-                >
-                  contact us
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p style="text-align: center; padding-top: 70px">
-          The number of credits needed to mark each student's work varies based
-          on the volume of text and images uploaded, as well as the complexity
-          of the feedback provided. To handle the weekly grading for 125
-          students (eg 5 classes of 25 students each), you would need about
-          1,500 credits per month.
-        </p>
-        <p style="text-align: center">
-          Try first with the
-          <a href="#" style="color: gray; text-decoration: none">FREE Trial</a>
-        </p>
-      </div>
-    </div>
-    <!-- pricing end-->
-
-    <!-- testimonial start-->
-    <div id="testimonial" class="testimonial section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 offset-lg-3">
-            <div
-              class="section-heading wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <h6 style="text-align: center">Teacher Testimonials</h6>
-              <h4 style="text-align: center">
-                What Our <em>Educators</em> Say
-              </h4>
-
-              <div class="line-dec"></div>
-            </div>
-          </div>
-          <div
-            class="col-lg-12 wow fadeInUp"
-            data-wow-duration="0.5s"
-            data-wow-delay="0.25s"
-          >
-            <div class="row" style="padding-top: 100px">
-              <div class="col-lg-4 col-md-6">
-                <div class="team-member">
-                  <div class="main-content">
-                    <img src="assets/images/teacher1.jpg" alt="" />
-                    <span class="category">History Teacher</span>
-                    <h4>Ethan Walsh</h4>
-                    <p
-                      style="
-                        color: #b2b2b2;
-                        font-size: 12px;
-                        text-align: justify;
-                        line-height: normal;
-                      "
-                    >
-                      Graded Pro has completely transformed my grading workflow.
-                      The seamless integration with Google Classroom and the AI
-                      grading have saved me countless hours. I can now focus
-                      more on interactive lessons and less on the daunting task
-                      of marking. It’s a game-changer for educators!
-                    </p>
-                    <ul class="social-media">
-                      <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="team-member">
-                  <div class="main-content">
-                    <img src="assets/images/teacher2.jpg" alt="" />
-                    <span class="category">Mathematics Teacher</span>
-                    <h4>Donna Clarke</h4>
-                    <p
-                      style="
-                        color: #b2b2b2;
-                        font-size: 12px;
-                        text-align: justify;
-                        line-height: normal;
-                      "
-                    >
-                      I was initially skeptical about the accuracy of automated
-                      AI grading, but Graded Pro has proven me wrong. The
-                      consistency and detail in feedback have improved my
-                      students' understanding and performance. This tool has
-                      become an indispensable part of my teaching toolkit
-                    </p>
-                    <ul class="social-media">
-                      <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="team-member">
-                  <div class="main-content">
-                    <img src="assets/images/teacher3.jpg" alt="" />
-                    <span class="category">Online Tutor</span>
-                    <h4>Kavita Sharma</h4>
-                    <p
-                      style="
-                        color: #b2b2b2;
-                        font-size: 12px;
-                        text-align: justify;
-                        line-height: normal;
-                      "
-                    >
-                      Adopting Graded Pro for my online courses was the best
-                      decision I made. The platform's ability to provide
-                      immediate, personalised feedback to students is
-                      remarkable. Plus, the analytics help me tailor my course
-                      content to better meet my students' needs. Highly
-                      recommend!
-                    </p>
-                    <ul class="social-media">
-                      <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- testimonial end-->
-
-    <!-- footer start-->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-lg-3 custom_center">
-            <div class="about-footer footer-item">
-              <div class="logo">
-                <a href="#">
-                  <img src="assets/images/logo.png" />
-                </a>
-              </div>
-              <a href="mailto:info@graded.pro" class="support-mail"
-                >info@graded.pro</a
-              >
-              <ul class="social-links">
-                <li>
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3 custom_center">
-            <div class="footer-item footer-service">
-              <h4>Our Services</h4>
-              <ul>
-                <li><a href="#">Educational Consulting</a></li>
-                <li><a href="#">Online Tutoring</a></li>
-                <li><a href="#">Curriculum Development</a></li>
-                <li><a href="#">Career Counseling</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3 custom_center">
-            <div class="footer-item footer-community">
-              <h4>Explore</h4>
-              <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">FAQs</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3 custom_center">
-            <div class="footer-app footer-item">
-              <h4>Companion Apps</h4>
-              <a
-                href="https://play.google.com/store/apps/details?id=pro.graded.student.companion&hl=en"
-                target="_blank"
-              >
-                <img src="./assets/images/gPlay .png" alt="play store" />
-              </a>
-              <hr style="background-color: #b2b2b2; margin: 0" />
-              <a href="#">
-                <img src="./assets/images/appStore.png" alt="app store" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-12">
-            <div class="copyright">
-              <p>
-                © 2024 Graded Pro. All Rights Reserved.<br />
-                Designed by
-                <a href="https://www.freelancer.com/u/arafatWebDev"
-                  >Arafat Hossain</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- footer end-->
-
-    <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-
-    <script src="assets/js/custom.js"></script>
-
-    <script>
-      // Initialize Plyr
-      const player = new Plyr("#player", {
-        controls: [
-          "play",
-          "progress",
-          "current-time",
-          "mute",
-          "volume",
-          "fullscreen",
-        ],
-      });
-
-      // Get references to elements
-      const videoContainer = document.getElementById("videoContainer");
-      const playButtonOverlay = document.getElementById("playButtonOverlay");
-
-      // Function to toggle play/pause
-      const togglePlayPause = () => {
-        if (player.playing) {
-          player.pause();
-        } else {
-          player.play();
-        }
-      };
-
-      // Update button state based on video events
-      player.on("play", () => {
-        playButtonOverlay.innerHTML = "&#10074;&#10074;"; // Pause Icon
-        playButtonOverlay.style.display = "block"; // Always visible
-      });
-
-      player.on("pause", () => {
-        playButtonOverlay.innerHTML = "&#9658;"; // Play Icon
-        playButtonOverlay.style.display = "block"; // Always visible
-      });
-
-      // Handle click on overlay button
-      playButtonOverlay.addEventListener("click", togglePlayPause);
-
-      // Optional: Hide the native Plyr play button
-      document.querySelector(
-        ".plyr__control.plyr__control--overlaid"
-      ).style.display = "none";
-    </script>
+    <!-- script -->
+    <script src="./assets/js/animation.js"></script>
   </body>
 </html>
